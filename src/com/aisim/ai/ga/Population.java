@@ -7,7 +7,8 @@ import java.util.LinkedList;
 import java.util.List;
 
 /**
- * Created by Krzysztof on 3/3/2015.
+ * ai
+ * Created by Krzysztof Slupski on 3/3/2015.
  */
 public class Population {
 
@@ -31,7 +32,12 @@ public class Population {
         // persist initial generation
     }
 
-    private void createNewGeneration()
+    public void scoreGeneration()
+    {
+        // this is where the live of one generation happens
+    }
+
+    public void createNewGeneration()
     {
         this.id ++;
         // select the fittest for crossover
