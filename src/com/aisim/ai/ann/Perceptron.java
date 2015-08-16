@@ -1,40 +1,43 @@
 package com.aisim.ai.ann;
 
+import java.lang.reflect.Array;
+import java.util.ArrayList;
 import java.util.LinkedList;
+import java.util.List;
 
 /**
- * Created by Krzysztof on 1/5/2015.
+ * ai
+ * Created by Krzysztof Slupski on 1/5/2015.
  */
 public class Perceptron {
-    private PerceptronConfiguration configuration;
-    private LinkedList<PerceptronLayer> layers;
+	private PerceptronConfiguration configuration;
+	private LinkedList<PerceptronLayer> layers;
 
-    public Perceptron(PerceptronConfiguration configuration) {
-       this.configuration = configuration;
-        layers = new LinkedList<PerceptronLayer>();
-        initialize();
-    }
+	public Perceptron(PerceptronConfiguration configuration) {
+		this.configuration = configuration;
+		layers = new LinkedList<PerceptronLayer>();
+		initialize();
+	}
 
-    public PerceptronConfiguration getConfiguration()
-    {
-        return configuration;
-    }
+	public PerceptronConfiguration getConfiguration() {
+		return configuration;
+	}
 
-    public void initialize() {
-        layers.clear();
-        if (configuration.getLayerNeuronsCount().length > 0) {
-            for (int i = 0; i < configuration.getLayerNeuronsCount().length; i++) {
-                layers.add(new PerceptronLayer(i, configuration.getLayerNeuronsCount()[i],
-                        /* first layer accepts initial inputs*/
-                        i == 0 ? configuration.getInputsCount() : configuration.getLayerNeuronsCount()[i - 1]));
-                // last layer is output layer
-                if (i == configuration.getLayerNeuronsCount().length - 1)
-                    layers.add(new PerceptronLayer(i + 1, configuration.getOutputsCount(), configuration.getLayerNeuronsCount()[i]));
-            }
-        } else {
-            layers.add(new PerceptronLayer(0, configuration.getOutputsCount(), configuration.getInputsCount()));
-        }
-    }
+	public void initialize() {
+		layers.clear();
+		if (configuration.getLayerNeuronsCount().length > 0) {
+			for (int i = 0; i < configuration.getLayerNeuronsCount().length; i++) {
+				layers.add(new PerceptronLayer(i, configuration.getLayerNeuronsCount()[i],
+	                    /* first layer accepts initial inputs*/
+					i == 0 ? configuration.getInputsCount() : configuration.getLayerNeuronsCount()[i - 1]));
+				// last layer is output layer
+				if (i == configuration.getLayerNeuronsCount().length - 1)
+					layers.add(new PerceptronLayer(i + 1, configuration.getOutputsCount(), configuration.getLayerNeuronsCount()[i]));
+			}
+		} else {
+			layers.add(new PerceptronLayer(0, configuration.getOutputsCount(), configuration.getInputsCount()));
+		}
+	}
 
 //    private class NeuronRunnable implements Runnable {
 //        private Float[] input;
@@ -56,38 +59,57 @@ public class Perceptron {
 //        }
 //    }
 
-    public LinkedList<Float> calculate(Float... input) {
-        LinkedList<Float> output = new LinkedList<Float>();
-        for (PerceptronLayer l : layers) {
-            output.clear();
-            int weightCount = 0;
-            for (PerceptronNeuron n : l.getNeurons()) {
+	public LinkedList<Float> calculate(Float... input) {
+		LinkedList<Float> output = new LinkedList<Float>();
+		for (PerceptronLayer l : layers) {
+			output.clear();
+			int weightCount = 0;
+			for (PerceptronNeuron n : l.getNeurons()) {
 
 //                ExecutorService service = Executors.newFixedThreadPool(5);
 //                service.submit(new NeuronRunnable(input, n));
-                float netinput = 0;
-                for (Float w : n.getWeights())
-                    netinput += w * input[weightCount++];
+				float netinput = 0;
+				for (Float w : n.getWeights())
+					netinput += w * input[weightCount++];
 
-                netinput += n.getWeights().getLast() * configuration.getBias();
-                output.add(sigmoid(netinput));
-                weightCount = 0;
-            }
-            input = output.<Float>toArray(input);
-        }
-        return output;
-    }
+				netinput += n.getWeights().getLast() * configuration.getBias();
+				output.add(sigmoid(netinput));
+				weightCount = 0;
+			}
+			input = output.<Float>toArray(input);
+		}
+		return output;
+	}
 
-    @Override
-    public String toString() {
-        StringBuilder builder = new StringBuilder();
-        for (PerceptronLayer l : layers) {
-            builder.append(l.toString() + "\n");
-        }
-        return builder.toString();
-    }
+	public List<Float> flatten() {
+		List<Float> weights = new ArrayList<Float>();
+		for (PerceptronLayer l : layers) {
+			for (PerceptronNeuron n : l.getNeurons()) {
+				weights.addAll(n.getWeights());
+			}
+		}
+		return weights;
+	}
 
-    private float sigmoid(float input) {
-        return (float) (1 / (1 + Math.exp(-input / configuration.getSigmoidActivationResponse())));
-    }
+	public void restore(List<Float> weights)
+	{
+		int weight = 0;
+		for (PerceptronLayer layer : layers)
+			for (int j = 0; j < layer.getNeurons().size(); ++j)
+				for (int k = 0; k < layer.getNeurons().get(j).getWeights().size(); ++k)
+					layer.getNeurons().get(j).getWeights().set(k, weights.get(weight++));
+	}
+
+	@Override
+	public String toString() {
+		StringBuilder builder = new StringBuilder();
+		for (PerceptronLayer l : layers) {
+			builder.append(l.toString()).append("\n");
+		}
+		return builder.toString();
+	}
+
+	private float sigmoid(float input) {
+		return (float) (1 / (1 + Math.exp(-input / configuration.getSigmoidActivationResponse())));
+	}
 }

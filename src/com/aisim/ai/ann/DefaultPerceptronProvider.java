@@ -1,11 +1,12 @@
 package com.aisim.ai.ann;
 
 /**
- * Created by Krzysztof on 3/3/2015.
+ * ai
+ * Created by Krzysztof Slupski on 3/3/2015.
  */
 public class DefaultPerceptronProvider implements PerceptronProvider {
     @Override
-    public Perceptron getPerceptron(PerceptronConfiguration configuration) {
-        return new Perceptron(configuration);
+    public Perceptron getPerceptron() {
+        return new Perceptron(new DefaultPerceptronConfiguration());
     }
 }

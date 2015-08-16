@@ -17,12 +17,12 @@ public class Evolution {
 
 	public void run() {
 
-		Population population = new Population(1, configuration.getPopulationConfiguration(), new DefaultPerceptronProvider());
-		System.out.print(population.toString());
+		Population population = new Population(configuration.getPopulationConfiguration(), new DefaultPerceptronProvider());
+		Generation generation = Generation.create(1, population);
+		System.out.print(generation.toString());
 		for (int i = 0; i < configuration.getEpochsCount(); i++) {
-			population.scoreGeneration();
-			population.createNewGeneration();
-			System.out.print(population.toString());
+			generation = generation.live();
+			System.out.print(generation.toString());
 		}
 	}
 }

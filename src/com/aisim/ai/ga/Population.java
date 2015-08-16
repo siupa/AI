@@ -12,46 +12,42 @@ import java.util.List;
  */
 public class Population {
 
-    private long id;
-    private final PopulationConfiguration configuration;
-    private final PerceptronProvider perceptronProvider;
-    List<Perceptron> chromosoms;
+	private final PopulationConfiguration configuration;
+	private final PerceptronProvider perceptronProvider;
+	private List<Genome> chromosoms;
 
-    public Population(int id, PopulationConfiguration configuration, PerceptronProvider perceptronProvider) {
-        this.id = id;
-        this.configuration = configuration;
-        this.perceptronProvider = perceptronProvider;
-        this.chromosoms = new LinkedList<Perceptron>();
-        createInitialPopulation();
-    }
+	public List<Genome> getChromosoms() {
+		return chromosoms;
+	}
 
-    private void createInitialPopulation() {
-        for (int i = 0; i < configuration.getChromosomsCount(); i++) {
-            this.chromosoms.add(perceptronProvider.getPerceptron(configuration.getPerceptronConfiguration()));
-        }
-        // persist initial generation
-    }
+	public Population(PopulationConfiguration configuration, PerceptronProvider perceptronProvider) {
+		this.configuration = configuration;
+		this.perceptronProvider = perceptronProvider;
+		this.chromosoms = new LinkedList<Genome>();
+		init();
+	}
 
-    public void scoreGeneration()
-    {
-        // this is where the live of one generation happens
-    }
+	private void init() {
+		for (int i = 0; i < configuration.getChromosomsCount(); i++) {
+			this.chromosoms.add(new Genome(i, perceptronProvider));
+		}
+	}
 
-    public void createNewGeneration()
-    {
-        this.id ++;
-        // select the fittest for crossover
-        // mutate random
-        // persist new generation
-    }
+	public void reproduce() {
+		// select the fittest
+		// cross over
+	}
 
-    @Override
-    public String toString() {
-        StringBuilder builder = new StringBuilder();
-        builder.append(String.format("\nPopulation %d:\n", this.id));
-        for (Perceptron p : chromosoms) {
-            builder.append(p.toString());
-        }
-        return builder.toString();
-    }
+	public void mutate() {
+		// randomly mutate
+	}
+
+	@Override
+	public String toString() {
+		StringBuilder builder = new StringBuilder();
+		for (Genome g : chromosoms) {
+			builder.append(g.toString());
+		}
+		return builder.toString();
+	}
 }

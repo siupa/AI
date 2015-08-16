@@ -3,7 +3,8 @@ package com.aisim.ai.ann;
 import java.util.LinkedList;
 
 /**
- * Created by Krzysztof on 1/5/2015.
+ * ai
+ * Created by Krzysztof Slupski on 1/5/2015.
  */
 public class PerceptronLayer {
     private LinkedList<PerceptronNeuron> neurons;
@@ -35,9 +36,8 @@ public class PerceptronLayer {
         StringBuilder builder = new StringBuilder();
         builder.append(String.format("(%d):", this.id));
         for (PerceptronNeuron n : neurons) {
-            builder.append("[" + n.toString() + "]");
+            builder.append("[").append(n.toString()).append("]");
         }
-        builder.append("\n");
         return builder.toString();
     }
 }

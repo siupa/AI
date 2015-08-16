@@ -7,13 +7,14 @@ import org.junit.Test;
 
 
 /**
- * Created by Krzysztof on 3/3/2015.
+ * ai
+ * Created by Krzysztof Slupski on 3/3/2015.
  */
 public class PopulationTests {
 
     @Test
     public void populationTest() {
-        Population population = new Population(1, new PopulationConfiguration() {
+        Population population = new Population(new PopulationConfiguration() {
             @Override
             public int getChromosomsCount() {
                 return 10;
