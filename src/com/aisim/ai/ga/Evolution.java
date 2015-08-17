@@ -1,7 +1,8 @@
 package com.aisim.ai.ga;
 
 import com.aisim.ai.ann.DefaultPerceptronProvider;
-import com.aisim.ai.ann.Perceptron;
+import com.aisim.connector.Display;
+import com.aisim.connector.LiveSimulator;
 
 /**
  * ai
@@ -10,19 +11,23 @@ import com.aisim.ai.ann.Perceptron;
 public class Evolution {
 
 	private final EvolutionConfiguration configuration;
+	private final Display display;
+	private final LiveSimulator simulator;
 
-	public Evolution(EvolutionConfiguration configuration) {
+	public Evolution(EvolutionConfiguration configuration, Display display, LiveSimulator simulator) {
 		this.configuration = configuration;
+		this.display = display;
+		this.simulator = simulator;
 	}
 
 	public void run() {
 
 		Population population = new Population(configuration.getPopulationConfiguration(), new DefaultPerceptronProvider());
-		Generation generation = Generation.create(1, population);
-		System.out.print(generation.toString());
+		Epoch epoch = Epoch.create(1, population, simulator);
+		display.out(epoch);
 		for (int i = 0; i < configuration.getEpochsCount(); i++) {
-			generation = generation.live();
-			System.out.print(generation.toString());
+			epoch = epoch.live();
+			display.out(epoch);
 		}
 	}
 }

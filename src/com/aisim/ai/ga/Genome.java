@@ -41,6 +41,10 @@ public class Genome {
 		return fitness;
 	}
 
+	public void incrementFitness(Float fitnessIncrement) {
+		this.fitness += fitnessIncrement;
+	}
+
 	@Override
 	public String toString() {
 		StringBuilder builder = new StringBuilder();
@@ -55,5 +59,4 @@ public class Genome {
 		builder.append("\n");
 		return builder.toString();
 	}
-
 }

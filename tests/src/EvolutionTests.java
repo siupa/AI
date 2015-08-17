@@ -1,7 +1,11 @@
 import com.aisim.ai.ann.DefaultPerceptronConfiguration;
-import com.aisim.ai.ann.DefaultPerceptronProvider;
 import com.aisim.ai.ann.PerceptronConfiguration;
-import com.aisim.ai.ga.*;
+import com.aisim.ai.ga.Evolution;
+import com.aisim.ai.ga.EvolutionConfiguration;
+import com.aisim.ai.ga.Population;
+import com.aisim.ai.ga.PopulationConfiguration;
+import com.aisim.connector.Display;
+import com.aisim.connector.LiveSimulator;
 import org.junit.Test;
 
 
@@ -32,6 +36,16 @@ public class EvolutionTests {
 						return new DefaultPerceptronConfiguration();
 					}
 				};
+			}
+		}, new Display() {
+			@Override
+			public void out(Object content) {
+				System.out.print(content.toString());
+			}
+		}, new LiveSimulator() {
+			@Override
+			public void simulate(Population population) {
+
 			}
 		});
 

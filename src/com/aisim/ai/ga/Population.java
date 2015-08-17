@@ -1,10 +1,10 @@
 package com.aisim.ai.ga;
 
-import com.aisim.ai.ann.Perceptron;
 import com.aisim.ai.ann.PerceptronProvider;
 
-import java.util.LinkedList;
+import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
 /**
  * ai
@@ -12,42 +12,72 @@ import java.util.List;
  */
 public class Population {
 
-	private final PopulationConfiguration configuration;
-	private final PerceptronProvider perceptronProvider;
-	private List<Genome> chromosoms;
+    private final PopulationConfiguration configuration;
+    private final PerceptronProvider perceptronProvider;
+    private List<Genome> chromosoms;
 
-	public List<Genome> getChromosoms() {
-		return chromosoms;
-	}
+    public List<Genome> getChromosoms() {
+        return chromosoms;
+    }
 
-	public Population(PopulationConfiguration configuration, PerceptronProvider perceptronProvider) {
-		this.configuration = configuration;
-		this.perceptronProvider = perceptronProvider;
-		this.chromosoms = new LinkedList<Genome>();
-		init();
-	}
+    private Population(List<Genome> chromosoms, PopulationConfiguration configuration, PerceptronProvider perceptronProvider) {
+        this.configuration = configuration;
+        this.perceptronProvider = perceptronProvider;
+        this.chromosoms = chromosoms;
+    }
 
-	private void init() {
-		for (int i = 0; i < configuration.getChromosomsCount(); i++) {
-			this.chromosoms.add(new Genome(i, perceptronProvider));
-		}
-	}
+    public Population(PopulationConfiguration configuration, PerceptronProvider perceptronProvider) {
+        this.configuration = configuration;
+        this.perceptronProvider = perceptronProvider;
+        this.chromosoms = new ArrayList<Genome>();
+        init();
+    }
 
-	public void reproduce() {
-		// select the fittest
-		// cross over
-	}
+    private void init() {
+        for (int i = 0; i < configuration.getChromosomsCount(); i++) {
+            this.chromosoms.add(new Genome(i, perceptronProvider));
+        }
+    }
 
-	public void mutate() {
-		// randomly mutate
-	}
+    public Population reproduce() {
+        // TODO: refactor this code
+        List<Genome> newChromosoms = new ArrayList<Genome>();
+        List<Genome> elite = selectElite();
+        while (newChromosoms.size() < configuration.getChromosomsCount()) {
+            Genome mum = roulette(elite);
+            Genome dad = roulette(elite);
+            Genome child = crossOver(mum, dad);
+            mutate(child);
+            newChromosoms.add(child);
+        }
+        return new Population(newChromosoms, configuration, perceptronProvider);
+    }
 
-	@Override
-	public String toString() {
-		StringBuilder builder = new StringBuilder();
-		for (Genome g : chromosoms) {
-			builder.append(g.toString());
-		}
-		return builder.toString();
-	}
+    private List<Genome> selectElite() {
+        // TODO: implement elite selection
+        return chromosoms.subList(0, 5);
+    }
+
+    private Genome roulette(List<Genome> genomes) {
+        // TODO: implement roulette logic here
+        return genomes.get(2);
+    }
+
+    private Genome crossOver(Genome mum, Genome dad) {
+        // TODO: implement crossover
+        return mum;
+    }
+
+    private void mutate(Genome genome) {
+        // TODO: implement mutation
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder builder = new StringBuilder();
+        for (Genome g : chromosoms) {
+            builder.append(g.toString());
+        }
+        return builder.toString();
+    }
 }

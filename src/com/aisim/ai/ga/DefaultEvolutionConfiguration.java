@@ -9,7 +9,7 @@ import com.aisim.ai.ann.PerceptronConfiguration;
 public class DefaultEvolutionConfiguration implements EvolutionConfiguration {
 	@Override
 	public int getEpochsCount() {
-		return 1000;
+		return 100;
 	}
 
 	@Override
