@@ -15,7 +15,7 @@ public class Population {
     private final PopulationConfiguration configuration;
     private final PerceptronProvider perceptronProvider;
     private List<Genome> chromosoms;
-
+ v
     public List<Genome> getChromosoms() {
         return chromosoms;
     }
