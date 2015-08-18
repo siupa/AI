@@ -1,9 +1,10 @@
-package com.aiapp.connector;
+package com.aisim.aipp.connector;
 
 import com.aisim.connector.Display;
 
 /**
- * Created by Krzysztof on 8/17/2015.
+ * ai
+ * Created by Krzysztof Slupski on 8/17/2015.
  */
 public class DisplayImpl implements Display {
     @Override

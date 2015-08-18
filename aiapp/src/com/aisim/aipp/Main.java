@@ -1,7 +1,7 @@
-package com.aiapp;
+package com.aisim.aipp;
 
-import com.aiapp.connector.DisplayImpl;
-import com.aiapp.connector.LiveSimulatorImpl;
+import com.aisim.aipp.connector.DisplayImpl;
+import com.aisim.aipp.connector.LiveSimulatorImpl;
 import com.aisim.ai.ga.DefaultEvolutionConfiguration;
 import com.aisim.ai.ga.Evolution;
 

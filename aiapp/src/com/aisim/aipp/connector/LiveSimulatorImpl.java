@@ -1,4 +1,4 @@
-package com.aiapp.connector;
+package com.aisim.aipp.connector;
 
 import com.aisim.ai.ga.Genome;
 import com.aisim.ai.ga.Population;
@@ -7,7 +7,8 @@ import com.aisim.connector.LiveSimulator;
 import java.util.Random;
 
 /**
- * Created by Krzysztof on 8/17/2015.
+ * ai
+ * Created by Krzysztof Slupski on 8/17/2015.
  */
 public class LiveSimulatorImpl implements LiveSimulator {
     private static final Random random = new Random();
