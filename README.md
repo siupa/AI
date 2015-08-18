@@ -1,3 +1,3 @@
 # AI
 
-Port of the AI simulator rpoject from ugly (university times) .NET code to Java.
+Port of the AI simulator project from ugly (university times) .NET code to Java.
