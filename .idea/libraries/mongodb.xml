@@ -1,0 +1,12 @@
+<component name="libraryTable">
+  <library name="mongodb">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/libs/bson-3.0.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/libs/mongodb-driver-3.0.2.jar!/" />
+      <root url="jar://$PROJECT_DIR$/libs/mongodb-driver-core-3.0.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/libs/morphia-1.0.1.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

@@ -1,16 +1,7 @@
 import com.aisim.dal.Probe;
-import com.aisim.dal.ProbesRepository;
-import com.mongodb.Block;
-import com.mongodb.DBCollection;
+import com.aisim.dal.ProbesDao;
 import com.mongodb.MongoClient;
-import com.mongodb.client.MongoCollection;
-import com.mongodb.client.MongoDatabase;
-import com.mongodb.client.MongoIterable;
-import org.bson.Document;
 import org.junit.Test;
-
-import java.util.ArrayList;
-import java.util.List;
 
 /**
  * ai
@@ -23,7 +14,7 @@ public class MongoDBTests {
 
 	{
 		MongoClient client = new MongoClient();
-		ProbesRepository repo = new ProbesRepository(client);
-		repo.saveProbe(new Probe());
+		ProbesDao repo = new ProbesDao(client);
+		repo.save(new Probe());
 	}
 }
