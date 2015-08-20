@@ -1,7 +1,9 @@
 package com.aisim.ai.ann;
 
 import com.aisim.ai.utils.Helpers;
+
 import java.util.LinkedList;
+
 /**
  * ai
  * Created by Krzysztof Slupski on 1/5/2015.
@@ -11,7 +13,7 @@ public class PerceptronNeuron {
     private LinkedList<Float> weights;
 
     public PerceptronNeuron(int inputsCount) {
-        this.weights = new LinkedList<Float>();
+        weights = new LinkedList<Float>();
         for (int i = 0; i < inputsCount; i++) {
             weights.add(Helpers.randomClamped());
         }
@@ -29,7 +31,7 @@ public class PerceptronNeuron {
     public String toString() {
         StringBuilder builder = new StringBuilder();
         for (Float w : weights) {
-            builder.append(w.toString()).append(",");
+            builder.append(w).append(",");
         }
         builder.replace(builder.length() - 1, builder.length(), "");
         return builder.toString();

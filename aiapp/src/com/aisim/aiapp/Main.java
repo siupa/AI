@@ -1,9 +1,4 @@
-package com.aisim.aipp;
-
-import com.aisim.aipp.connector.DisplayImpl;
-import com.aisim.aipp.connector.LiveSimulatorImpl;
-import com.aisim.ai.ga.DefaultEvolutionConfiguration;
-import com.aisim.ai.ga.Evolution;
+package com.aisim.aiapp;
 
 public class Main {
     public static void main(String[] args) {

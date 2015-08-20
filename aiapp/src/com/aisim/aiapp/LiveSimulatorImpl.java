@@ -1,8 +1,7 @@
-package com.aisim.aipp.connector;
+package com.aisim.aiapp;
 
+import com.aisim.ai.ga.Epoch;
 import com.aisim.ai.ga.Genome;
-import com.aisim.ai.ga.Population;
-import com.aisim.connector.LiveSimulator;
 
 import java.util.Random;
 
@@ -14,9 +13,9 @@ public class LiveSimulatorImpl implements LiveSimulator {
     private static final Random random = new Random();
 
     @Override
-    public void simulate(Population population) {
-        for (int i = 0; i < population.getChromosoms().size(); i++) {
-            Genome g = population.getChromosoms().get(i);
+    public void simulate(Epoch epoch) {
+        for (int i = 0; i < epoch.getPopulation().getChromosoms().size(); i++) {
+            Genome g = epoch.getPopulation().getChromosoms().get(i);
             // TODO: implement here some logic that would score the population accordingly
             g.incrementFitness(random.nextFloat() - 0.5f);
         }

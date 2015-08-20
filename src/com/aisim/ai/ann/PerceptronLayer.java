@@ -13,7 +13,7 @@ public class PerceptronLayer {
     private int inputsCount;
 
     public PerceptronLayer(int id, int size, int inputsCount) {
-        this.neurons = new LinkedList<PerceptronNeuron>();
+        neurons = new LinkedList<PerceptronNeuron>();
         this.size = size;
         this.id = id;
         this.inputsCount = inputsCount;
@@ -34,9 +34,9 @@ public class PerceptronLayer {
     @Override
     public String toString() {
         StringBuilder builder = new StringBuilder();
-        builder.append(String.format("(%d):", this.id));
+        builder.append(String.format("(%d):", id));
         for (PerceptronNeuron n : neurons) {
-            builder.append("[").append(n.toString()).append("]");
+            builder.append("[").append(n).append("]");
         }
         return builder.toString();
     }

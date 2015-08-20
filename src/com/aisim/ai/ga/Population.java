@@ -4,7 +4,6 @@ import com.aisim.ai.ann.PerceptronProvider;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Random;
 
 /**
  * ai
@@ -16,10 +15,6 @@ public class Population {
     private final PerceptronProvider perceptronProvider;
     private List<Genome> chromosoms;
 
-    public List<Genome> getChromosoms() {
-        return chromosoms;
-    }
-
     private Population(List<Genome> chromosoms, PopulationConfiguration configuration, PerceptronProvider perceptronProvider) {
         this.configuration = configuration;
         this.perceptronProvider = perceptronProvider;
@@ -29,13 +24,17 @@ public class Population {
     public Population(PopulationConfiguration configuration, PerceptronProvider perceptronProvider) {
         this.configuration = configuration;
         this.perceptronProvider = perceptronProvider;
-        this.chromosoms = new ArrayList<Genome>();
+        chromosoms = new ArrayList<Genome>();
         init();
+    }
+
+    public List<Genome> getChromosoms() {
+        return chromosoms;
     }
 
     private void init() {
         for (int i = 0; i < configuration.getChromosomsCount(); i++) {
-            this.chromosoms.add(new Genome(i, perceptronProvider));
+            chromosoms.add(new Genome(i, perceptronProvider));
         }
     }
 
@@ -76,7 +75,7 @@ public class Population {
     public String toString() {
         StringBuilder builder = new StringBuilder();
         for (Genome g : chromosoms) {
-            builder.append(g.toString());
+            builder.append(g);
         }
         return builder.toString();
     }

@@ -1,7 +1,10 @@
+package aitests;
+
 import com.aisim.ai.ann.DefaultPerceptronConfiguration;
 import com.aisim.ai.ann.Perceptron;
 import org.junit.Test;
 
+import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -17,13 +20,13 @@ public class PerceptronTest {
         LinkedList<Float> out;
         int inputSize = perceptron.getConfiguration().getInputsCount();
         Float[] in = new Float[inputSize];
-        System.out.print(perceptron.toString());
+        System.out.print(perceptron);
         for (int i = 0; i < 10; i++) {
             for (int j = 0; j < inputSize; j++) {
                 in[j] = (float) Math.random();
             }
 
-            print("in", java.util.Arrays.asList(in));
+            print("in", Arrays.asList(in));
             out = perceptron.calculate(in);
             print("out", out);
         }
@@ -33,9 +36,9 @@ public class PerceptronTest {
         StringBuilder builder = new StringBuilder();
         builder.append(name);
         for (Float n : result) {
-            builder.append("[" + n.toString() + "]");
+            builder.append("[" + n + "]");
         }
         builder.append("\n");
-        System.out.print(builder.toString());
+        System.out.print(builder);
     }
 }

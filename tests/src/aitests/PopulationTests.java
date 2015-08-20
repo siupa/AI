@@ -1,3 +1,5 @@
+package aitests;
+
 import com.aisim.ai.ann.DefaultPerceptronConfiguration;
 import com.aisim.ai.ann.DefaultPerceptronProvider;
 import com.aisim.ai.ann.PerceptronConfiguration;
@@ -26,6 +28,6 @@ public class PopulationTests {
             }
         }, new DefaultPerceptronProvider());
 
-        System.out.print(population.toString());
+        System.out.print(population);
     }
 }

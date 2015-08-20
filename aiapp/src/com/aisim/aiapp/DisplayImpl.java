@@ -1,6 +1,4 @@
-package com.aisim.aipp.connector;
-
-import com.aisim.connector.Display;
+package com.aisim.aiapp;
 
 /**
  * ai
@@ -9,6 +7,6 @@ import com.aisim.connector.Display;
 public class DisplayImpl implements Display {
     @Override
     public void out(Object content) {
-        System.out.print(content.toString());
+        System.out.print(content);
     }
 }

@@ -8,5 +8,6 @@ import com.aisim.ai.ann.PerceptronConfiguration;
 public interface PopulationConfiguration {
 
     int getChromosomsCount();
+
     PerceptronConfiguration getPerceptronConfiguration();
 }

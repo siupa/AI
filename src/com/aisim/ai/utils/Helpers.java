@@ -1,6 +1,5 @@
 package com.aisim.ai.utils;
 
-import java.lang.Math;
 import java.util.Random;
 
 /**
@@ -10,8 +9,7 @@ public class Helpers {
 
     private static double PRECISION_FACTOR = Math.pow(10, 2);
 
-    public static float randomClamped()
-    {
+    public static float randomClamped() {
         return truncate((new Random().nextFloat() - 0.5f) * 2);
     }
 

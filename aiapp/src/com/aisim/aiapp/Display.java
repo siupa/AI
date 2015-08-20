@@ -1,4 +1,4 @@
-package com.aisim.connector;
+package com.aisim.aiapp;
 
 /**
  * Created by Krzysztof on 8/17/2015.
