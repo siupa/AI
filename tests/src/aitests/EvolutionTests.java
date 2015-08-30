@@ -4,10 +4,10 @@ import com.aisim.ai.ann.DefaultPerceptronConfiguration;
 import com.aisim.ai.ann.PerceptronConfiguration;
 import com.aisim.ai.ga.Epoch;
 import com.aisim.ai.ga.PopulationConfiguration;
-import com.aisim.aiapp.Display;
-import com.aisim.aiapp.Evolution;
-import com.aisim.aiapp.EvolutionConfiguration;
-import com.aisim.aiapp.LiveSimulator;
+import com.aisim.aiapp.evolution.Evolution;
+import com.aisim.aiapp.evolution.EvolutionConfiguration;
+import com.aisim.aiapp.evolution.simulator.Display;
+import com.aisim.aiapp.evolution.simulator.LiveSimulator;
 import org.junit.Test;
 
 
@@ -26,11 +26,21 @@ public class EvolutionTests {
             }
 
             @Override
+            public long getEpochLengthInTimeUnits() {
+                return 10;
+            }
+
+            @Override
             public PopulationConfiguration getPopulationConfiguration() {
                 return new PopulationConfiguration() {
                     @Override
                     public int getChromosomsCount() {
                         return 10;
+                    }
+
+                    @Override
+                    public Float getElitePercentage() {
+                        return .1f;
                     }
 
                     @Override
@@ -50,8 +60,6 @@ public class EvolutionTests {
 
             }
         });
-
-        evolution.run();
-
+        evolution.init();
     }
 }

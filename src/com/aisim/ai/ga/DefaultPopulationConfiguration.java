@@ -10,7 +10,12 @@ import com.aisim.ai.ann.PerceptronConfiguration;
 public class DefaultPopulationConfiguration implements PopulationConfiguration {
     @Override
     public int getChromosomsCount() {
-        return 100;
+        return 10;
+    }
+
+    @Override
+    public Float getElitePercentage() {
+        return .3f;
     }
 
     @Override

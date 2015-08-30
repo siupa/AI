@@ -23,6 +23,11 @@ public class PopulationTests {
             }
 
             @Override
+            public Float getElitePercentage() {
+                return .1f;
+            }
+
+            @Override
             public PerceptronConfiguration getPerceptronConfiguration() {
                 return new DefaultPerceptronConfiguration();
             }

@@ -1,4 +1,4 @@
-package com.aisim.aiapp;
+package com.aisim.aiapp.evolution.simulator;
 
 import com.aisim.ai.ga.Epoch;
 

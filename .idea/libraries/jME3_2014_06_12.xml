@@ -1,0 +1,17 @@
+<component name="libraryTable">
+  <library name="jME3_2014-06-12">
+    <CLASSES>
+      <root url="file://C:/libs/jME3_2014-06-12" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="file://C:/libs/jME3_2014-06-12/javadoc" />
+    </JAVADOC>
+    <NATIVE>
+      <root url="file://C:/libs/jME3_2014-06-12" />
+    </NATIVE>
+    <SOURCES>
+      <root url="file://C:/libs/jME3_2014-06-12/source" />
+    </SOURCES>
+    <jarDirectory url="file://C:/libs/jME3_2014-06-12" recursive="false" />
+  </library>
+</component>

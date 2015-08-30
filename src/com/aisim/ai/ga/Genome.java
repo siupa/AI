@@ -12,21 +12,24 @@ import java.util.List;
 public class Genome {
     private long id;
     private Float fitness;
+    private int fitnessPoints;
     private List<Float> dna;
     private Perceptron perceptron;
 
     public Genome(long id, PerceptronProvider perceptronProvider) {
         this.id = id;
-        fitness = 0.0f;
-        perceptron = perceptronProvider.getPerceptron();
-        dna = perceptron.flatten();
+        this.fitness = 0.0f;
+        this.fitnessPoints = 0;
+        this.perceptron = perceptronProvider.getPerceptron();
+        this.dna = perceptron.flatten();
     }
 
     public Genome(long id, List<Float> dna) {
         this.id = id;
-        fitness = 0.0f;
+        this.fitness = 0.0f;
+        this.fitnessPoints = 0;
         this.dna = dna;
-        perceptron.restore(this.dna);
+        this.perceptron.restore(this.dna);
     }
 
     public long getId() {

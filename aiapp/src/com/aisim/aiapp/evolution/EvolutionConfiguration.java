@@ -1,4 +1,4 @@
-package com.aisim.aiapp;
+package com.aisim.aiapp.evolution;
 
 import com.aisim.ai.ga.PopulationConfiguration;
 
@@ -8,6 +8,7 @@ import com.aisim.ai.ga.PopulationConfiguration;
  */
 public interface EvolutionConfiguration {
     int getEpochsCount();
+    long getEpochLengthInTimeUnits();
 
     PopulationConfiguration getPopulationConfiguration();
 }

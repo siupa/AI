@@ -9,6 +9,14 @@ public class Epoch {
     private long id;
     private Population population;
 
+    public long getId() {
+        return id;
+    }
+
+    public Population getPopulation() {
+        return population;
+    }
+
     private Epoch(long id, Population population) {
         this.id = id;
         this.population = population;
@@ -16,10 +24,6 @@ public class Epoch {
 
     public static Epoch create(long id, Population population) {
         return new Epoch(id, population);
-    }
-
-    public Population getPopulation() {
-        return population;
     }
 
     public Epoch next() {

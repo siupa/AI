@@ -1,4 +1,4 @@
-package com.aisim.aiapp;
+package com.aisim.aiapp.evolution;
 
 import com.aisim.ai.ga.DefaultPopulationConfiguration;
 import com.aisim.ai.ga.PopulationConfiguration;
@@ -11,6 +11,11 @@ public class DefaultEvolutionConfiguration implements EvolutionConfiguration {
     @Override
     public int getEpochsCount() {
         return 100;
+    }
+
+    @Override
+    public long getEpochLengthInTimeUnits() {
+        return 10;
     }
 
     @Override
