@@ -2,7 +2,6 @@ package com.aisim.dal;
 
 import org.bson.types.ObjectId;
 import org.mongodb.morphia.annotations.*;
-
 import java.util.List;
 
 /**
@@ -21,6 +20,7 @@ public class Probe {
     private int epochId;
     private int genomeId;
     private Float fitness;
+
     private List<Float> genomeWeights;
 
     public Probe() {
@@ -37,19 +37,15 @@ public class Probe {
     public ObjectId getId() {
         return id;
     }
-
     public int getEvolutionId() {
         return evolutionId;
     }
-
     public int getEpochId() {
         return epochId;
     }
-
     public int getGenomeId() {
         return genomeId;
     }
-
     public Float getFitness() {
         return fitness;
     }

@@ -4,7 +4,6 @@ import com.aisim.ai.ann.DefaultPerceptronProvider;
 import com.aisim.ai.ga.Epoch;
 import com.aisim.ai.ga.Population;
 import com.aisim.aiapp.evolution.simulator.Display;
-import com.aisim.aiapp.evolution.simulator.LiveSimulator;
 
 /**
  * ai
@@ -14,7 +13,6 @@ public class Evolution {
 
     private final EvolutionConfiguration configuration;
     private final Display display;
-    private final LiveSimulator simulator;
 
     public Epoch getCurrentEpoch() {
         return currentEpoch;
@@ -27,10 +25,9 @@ public class Evolution {
     private Epoch currentEpoch;
     private long currentEpochAge;
 
-    public Evolution(EvolutionConfiguration configuration, Display display, LiveSimulator simulator) {
+    public Evolution(EvolutionConfiguration configuration, Display display) {
         this.configuration = configuration;
         this.display = display;
-        this.simulator = simulator;
     }
 
     public void init() {
@@ -39,7 +36,7 @@ public class Evolution {
         display.out(currentEpoch);
     }
 
-    public void update(float timePerUpdate, long time) {
+    public void update() {
 
         // end of the evolution?
         if (currentEpoch.getId() > configuration.getEpochsCount())
@@ -49,7 +46,6 @@ public class Evolution {
 
         // end of the epoch?
         if (currentEpochAge > configuration.getEpochLengthInTimeUnits()) {
-            simulator.simulate(currentEpoch);
             currentEpoch = currentEpoch.next();
             currentEpochAge = 0;
         }

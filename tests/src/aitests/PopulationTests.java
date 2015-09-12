@@ -1,10 +1,8 @@
 package aitests;
 
-import com.aisim.ai.ann.DefaultPerceptronConfiguration;
 import com.aisim.ai.ann.DefaultPerceptronProvider;
-import com.aisim.ai.ann.PerceptronConfiguration;
+import com.aisim.ai.ga.DefaultPopulationConfiguration;
 import com.aisim.ai.ga.Population;
-import com.aisim.ai.ga.PopulationConfiguration;
 import org.junit.Test;
 
 
@@ -16,23 +14,7 @@ public class PopulationTests {
 
     @Test
     public void populationTest() {
-        Population population = new Population(new PopulationConfiguration() {
-            @Override
-            public int getChromosomsCount() {
-                return 10;
-            }
-
-            @Override
-            public Float getElitePercentage() {
-                return .1f;
-            }
-
-            @Override
-            public PerceptronConfiguration getPerceptronConfiguration() {
-                return new DefaultPerceptronConfiguration();
-            }
-        }, new DefaultPerceptronProvider());
-
+        Population population = new Population(new DefaultPopulationConfiguration(), new DefaultPerceptronProvider());
         System.out.print(population);
     }
 }

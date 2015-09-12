@@ -1,0 +1,1 @@
+CREATE TABLE probe (id UUID PRIMARY KEY,  evolutionId int,  epochId int,  genomeId int,  fitness float,  data varchar);

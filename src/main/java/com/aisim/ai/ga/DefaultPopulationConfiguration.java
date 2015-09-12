@@ -14,6 +14,16 @@ public class DefaultPopulationConfiguration implements PopulationConfiguration {
     }
 
     @Override
+    public Float getMutationRate() {
+        return .1f;
+    }
+
+    @Override
+    public Float getCrossOverRate() {
+        return 0.7f;
+    }
+
+    @Override
     public Float getElitePercentage() {
         return .3f;
     }

@@ -3,7 +3,6 @@ package com.aisim.aiapp;
 import com.aisim.aiapp.evolution.DefaultEvolutionConfiguration;
 import com.aisim.aiapp.evolution.Evolution;
 import com.aisim.aiapp.evolution.simulator.DisplayImpl;
-import com.aisim.aiapp.evolution.simulator.LiveSimulatorImpl;
 import com.jme3.app.SimpleApplication;
 import com.jme3.material.Material;
 import com.jme3.math.ColorRGBA;
@@ -19,8 +18,7 @@ public class Main extends SimpleApplication {
         hud = new Hud(this);
         evolution = new Evolution(
                 new DefaultEvolutionConfiguration(),
-                new DisplayImpl(),
-                new LiveSimulatorImpl());
+                new DisplayImpl());
     }
 
     public static void main(String[] args) {
@@ -43,7 +41,7 @@ public class Main extends SimpleApplication {
 
     @Override
     public void simpleUpdate(float tpf) {
-        evolution.update(tpf, timer.getTime());
+        evolution.update();
         hud.update(evolution);
     }
 }
