@@ -1,4 +1,4 @@
-package com.aisim.aiapp.evolution.simulator;
+package com.aisim.aiapp.evolution;
 
 /**
  * ai

@@ -2,7 +2,7 @@ package aitests;
 
 import com.aisim.aiapp.evolution.DefaultEvolutionConfiguration;
 import com.aisim.aiapp.evolution.Evolution;
-import com.aisim.aiapp.evolution.simulator.DisplayImpl;
+import com.aisim.aiapp.evolution.DisplayImpl;
 import org.junit.Test;
 
 

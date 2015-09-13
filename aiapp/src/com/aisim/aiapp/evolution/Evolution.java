@@ -3,7 +3,6 @@ package com.aisim.aiapp.evolution;
 import com.aisim.ai.ann.DefaultPerceptronProvider;
 import com.aisim.ai.ga.Epoch;
 import com.aisim.ai.ga.Population;
-import com.aisim.aiapp.evolution.simulator.Display;
 
 /**
  * ai
