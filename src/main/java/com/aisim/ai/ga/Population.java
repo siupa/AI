@@ -21,13 +21,13 @@ public class Population {
             return g2.getFitness().compareTo(g1.getFitness());
         }
     };
-    private List<Genome> chromosoms = new SortedList<Genome>(comparator);
+    private List<Genome> genomes = new SortedList<>(comparator);
 
 
-    private Population(List<Genome> chromosoms, PopulationConfiguration configuration, PerceptronProvider perceptronProvider) {
+    public Population(List<Genome> genomes, PopulationConfiguration configuration, PerceptronProvider perceptronProvider) {
         this.configuration = configuration;
         this.perceptronProvider = perceptronProvider;
-        this.chromosoms.addAll(chromosoms);
+        this.genomes.addAll(genomes);
     }
 
     public Population(PopulationConfiguration configuration, PerceptronProvider perceptronProvider) {
@@ -36,19 +36,19 @@ public class Population {
         init();
     }
 
-    public List<Genome> getChromosoms() {
-        return chromosoms;
+    public List<Genome> getGenomes() {
+        return genomes;
     }
 
     private void init() {
         for (int i = 0; i < configuration.getChromosomsCount(); i++) {
-            chromosoms.add(new Genome(i, perceptronProvider));
+            genomes.add(new Genome(i, perceptronProvider));
         }
     }
 
     public Population reproduce() {
 
-        List<Genome> newChromosoms = new ArrayList<Genome>();
+        List<Genome> newChromosoms = new ArrayList<>();
         List<Genome> elite = selectElite(configuration.getElitePercentage());
         while (newChromosoms.size() < configuration.getChromosomsCount()) {
             Genome mum = roulette(elite);
@@ -62,7 +62,7 @@ public class Population {
 
     private List<Genome> selectElite(Float percentage) {
         // TODO: implement elite selection
-        return chromosoms.subList(0, (int) Math.ceil((double) chromosoms.size() * (double) percentage));
+        return genomes.subList(0, (int) Math.ceil((double) genomes.size() * (double) percentage));
     }
 
     private Genome roulette(List<Genome> genomes) {
@@ -82,7 +82,7 @@ public class Population {
     @Override
     public String toString() {
         StringBuilder builder = new StringBuilder();
-        for (Genome g : chromosoms) {
+        for (Genome g : genomes) {
             builder.append(g);
         }
         return builder.toString();

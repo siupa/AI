@@ -1,6 +1,7 @@
 package com.aisim.ai.ga;
 
 import com.aisim.ai.ann.Perceptron;
+import com.aisim.ai.ann.PerceptronConfiguration;
 import com.aisim.ai.ann.PerceptronProvider;
 
 import java.util.List;
@@ -24,11 +25,12 @@ public class Genome {
         this.dna = perceptron.flatten();
     }
 
-    public Genome(long id, List<Float> dna) {
+    public Genome(long id, List<Float> dna, PerceptronConfiguration perceptronConfiguration) {
         this.id = id;
         this.fitness = 0.0f;
         this.fitnessPoints = 0;
         this.dna = dna;
+        this.perceptron = new Perceptron(perceptronConfiguration);
         this.perceptron.restore(this.dna);
     }
 

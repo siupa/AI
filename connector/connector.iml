@@ -13,5 +13,6 @@
     <orderEntry type="library" name="mongodb" level="project" />
     <orderEntry type="module" module-name="ai" />
     <orderEntry type="library" name="Maven: com.google.code.gson:gson:2.3.1" level="project" />
+    <orderEntry type="library" name="Maven: com.google.guava:guava:18.0" level="project" />
   </component>
 </module>

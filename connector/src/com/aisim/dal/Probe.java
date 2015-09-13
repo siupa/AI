@@ -16,9 +16,9 @@ public class Probe {
 
     @Id
     private ObjectId id;
-    private int evolutionId;
-    private int epochId;
-    private int genomeId;
+    private long evolutionId;
+    private long epochId;
+    private long genomeId;
     private Float fitness;
 
     private List<Float> genomeWeights;
@@ -26,7 +26,8 @@ public class Probe {
     public Probe() {
     }
 
-    public Probe(int evolutionId, int epochId, int genomeId, Float fitness, List<Float> weights) {
+    public Probe(ObjectId id, long evolutionId, long epochId, long genomeId, Float fitness, List<Float> weights) {
+        this.id = id;
         this.evolutionId = evolutionId;
         this.epochId = epochId;
         this.genomeId = genomeId;
@@ -37,13 +38,13 @@ public class Probe {
     public ObjectId getId() {
         return id;
     }
-    public int getEvolutionId() {
+    public long getEvolutionId() {
         return evolutionId;
     }
-    public int getEpochId() {
+    public long getEpochId() {
         return epochId;
     }
-    public int getGenomeId() {
+    public long getGenomeId() {
         return genomeId;
     }
     public Float getFitness() {

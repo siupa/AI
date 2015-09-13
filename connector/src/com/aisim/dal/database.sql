@@ -1,1 +1,12 @@
-CREATE TABLE probe (id UUID PRIMARY KEY,  evolutionId int,  epochId int,  genomeId int,  fitness float,  data varchar);
+CREATE TABLE IF NOT EXISTS probe (
+  id          ObjectId PRIMARY KEY,
+  evolutionId INT,
+  epochId     INT,
+  genomeId    INT,
+  fitness     FLOAT,
+  data        VARCHAR
+);
+CREATE INDEX IF NOT EXISTS idx_probe_evolutionId_epochId ON probe (evolutionId, epochId)
+
+
+

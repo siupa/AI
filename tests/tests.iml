@@ -9,6 +9,7 @@
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" name="sqlite4java-392" level="project" />
+    <orderEntry type="library" name="mongodb" level="project" />
     <orderEntry type="module-library">
       <library name="JUnit4">
         <CLASSES>
@@ -21,9 +22,7 @@
       </library>
     </orderEntry>
     <orderEntry type="module" module-name="ai" />
-    <orderEntry type="library" name="mongodb" level="project" />
     <orderEntry type="module" module-name="connector" />
-    <orderEntry type="library" name="mongodb" level="project" />
     <orderEntry type="module" module-name="aiapp" />
   </component>
 </module>
