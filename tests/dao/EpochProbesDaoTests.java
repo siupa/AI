@@ -1,3 +1,5 @@
+package dao;
+
 import com.aisim.dal.EpochProbesDao;
 import com.aisim.dal.EpochProbesMongodbDao;
 import com.aisim.dal.EpochProbesSqlLiteDao;
@@ -25,28 +27,7 @@ public class EpochProbesDaoTests {
 	private final int TEST_EVOLUTION_ID = -999;
 	private final int TEST_EPOCH_ID = -999;
 	private final String DB_FILENAME = "../database";
-
 	private EpochProbesDao repo;
-
-	@Test
-	public void basicSqlLiteTest() throws Exception {
-		repo = new EpochProbesSqlLiteDao(DB_FILENAME);
-		List<Integer> results = new LinkedList<>();
-		SQLiteConnection db = new SQLiteConnection(new File(DB_FILENAME));
-		db.open(true);
-		SQLiteStatement st = db.prepare("SELECT ?");
-		try {
-			st.bind(1, 123);
-			while (st.step()) {
-				results.add(st.columnInt(0));
-			}
-		} finally {
-			st.dispose();
-		}
-		db.dispose();
-		assertTrue(results.size() == 1);
-		assertTrue(results.get(0) == 123);
-	}
 
 	@Test
 	public void saveSqlLiteTest() throws Exception {

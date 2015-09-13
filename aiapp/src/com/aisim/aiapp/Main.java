@@ -17,8 +17,7 @@ public class Main extends SimpleApplication {
     public Main() {
         hud = new Hud(this);
         evolution = new Evolution(
-                new DefaultEvolutionConfiguration(),
-                new DisplayImpl());
+                new DefaultEvolutionConfiguration());
     }
 
     public static void main(String[] args) {
@@ -28,6 +27,8 @@ public class Main extends SimpleApplication {
 
     @Override
     public void simpleInitApp() {
+        evolution.init();
+
         Box b = new Box(1, 1, 1);
         Geometry geom = new Geometry("Box", b);
         Material mat = new Material(assetManager, "Common/MatDefs/Misc/Unshaded.j3md");
@@ -36,7 +37,6 @@ public class Main extends SimpleApplication {
         rootNode.attachChild(geom);
 
         hud.init(guiFont);
-        evolution.init();
     }
 
     @Override

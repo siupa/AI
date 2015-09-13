@@ -9,6 +9,5 @@ import com.aisim.ai.ga.PopulationConfiguration;
 public interface EvolutionConfiguration {
     int getEpochsCount();
     long getEpochLengthInTimeUnits();
-
     PopulationConfiguration getPopulationConfiguration();
 }

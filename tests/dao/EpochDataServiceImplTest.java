@@ -1,3 +1,5 @@
+package dao;
+
 import com.aisim.ai.ann.DefaultPerceptronConfiguration;
 import com.aisim.ai.ann.DefaultPerceptronProvider;
 import com.aisim.ai.ga.DefaultPopulationConfiguration;

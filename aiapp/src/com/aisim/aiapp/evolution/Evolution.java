@@ -11,7 +11,6 @@ import com.aisim.ai.ga.Population;
 public class Evolution {
 
     private final EvolutionConfiguration configuration;
-    private final Display display;
 
     public Epoch getCurrentEpoch() {
         return currentEpoch;
@@ -24,29 +23,31 @@ public class Evolution {
     private Epoch currentEpoch;
     private long currentEpochAge;
 
-    public Evolution(EvolutionConfiguration configuration, Display display) {
+    public Evolution(EvolutionConfiguration configuration) {
         this.configuration = configuration;
-        this.display = display;
     }
 
     public void init() {
         Population population = new Population(configuration.getPopulationConfiguration(), new DefaultPerceptronProvider());
         currentEpoch = Epoch.create(1, population);
-        display.out(currentEpoch);
+        currentEpochAge = 0;
     }
 
-    public void update() {
+    public boolean update() {
 
+        if(currentEpoch == null)
+            throw new RuntimeException("Evolution is not initialized. Run init() first.");
         // end of the evolution?
         if (currentEpoch.getId() > configuration.getEpochsCount())
-            return;
+            return false;
 
         currentEpochAge++;
 
         // end of the epoch?
-        if (currentEpochAge > configuration.getEpochLengthInTimeUnits()) {
+        if (currentEpochAge >= configuration.getEpochLengthInTimeUnits()) {
             currentEpoch = currentEpoch.next();
             currentEpochAge = 0;
         }
+        return true;
     }
 }
