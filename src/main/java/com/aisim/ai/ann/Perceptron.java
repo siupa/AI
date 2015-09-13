@@ -10,11 +10,11 @@ import java.util.List;
  */
 public class Perceptron {
     private final PerceptronConfiguration configuration;
-    private final LinkedList<PerceptronLayer> layers;
+    private final List<PerceptronLayer> layers;
 
     public Perceptron(PerceptronConfiguration configuration) {
         this.configuration = configuration;
-        layers = new LinkedList<PerceptronLayer>();
+        layers = new ArrayList<>();
         init();
     }
 
@@ -59,7 +59,7 @@ public class Perceptron {
 //    }
 
     public LinkedList<Float> calculate(Float... input) {
-        LinkedList<Float> output = new LinkedList<Float>();
+        LinkedList<Float> output = new LinkedList<>();
         for (PerceptronLayer l : layers) {
             output.clear();
             int weightCount = 0;
@@ -81,7 +81,7 @@ public class Perceptron {
     }
 
     public List<Float> flatten() {
-        List<Float> weights = new ArrayList<Float>();
+        List<Float> weights = new ArrayList<>();
         for (PerceptronLayer l : layers) {
             for (PerceptronNeuron n : l.getNeurons()) {
                 weights.addAll(n.getWeights());

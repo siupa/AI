@@ -15,14 +15,22 @@ public class Population {
 
     private final PopulationConfiguration configuration;
     private final PerceptronProvider perceptronProvider;
-    private Comparator<Genome> comparator = new Comparator<Genome>() {
-        @Override
-        public int compare(Genome g1, Genome g2) {
-            return g2.getFitness().compareTo(g1.getFitness());
+    private class ComparableSortedList extends SortedList<Genome> {
+        public ComparableSortedList() {
+            super(new Comparator<Genome>() {
+                @Override
+                public int compare(Genome g1, Genome g2) {
+                    return g2.getFitness().compareTo(g1.getFitness());
+                }
+            });
         }
-    };
-    private List<Genome> genomes = new SortedList<>(comparator);
 
+        @Override
+        public boolean contains(Object obj) {
+            return indexOf(obj) >= 0;
+        }
+    }
+    private List<Genome> genomes = new ComparableSortedList();
 
     public Population(List<Genome> genomes, PopulationConfiguration configuration, PerceptronProvider perceptronProvider) {
         this.configuration = configuration;

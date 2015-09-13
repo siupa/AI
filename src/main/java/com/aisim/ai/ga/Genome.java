@@ -3,6 +3,8 @@ package com.aisim.ai.ga;
 import com.aisim.ai.ann.Perceptron;
 import com.aisim.ai.ann.PerceptronConfiguration;
 import com.aisim.ai.ann.PerceptronProvider;
+import org.apache.commons.lang.builder.EqualsBuilder;
+import org.apache.commons.lang.builder.HashCodeBuilder;
 
 import java.util.List;
 
@@ -68,5 +70,29 @@ public class Genome {
         builder.replace(builder.length() - 1, builder.length(), "");
         builder.append("\n");
         return builder.toString();
+    }
+
+    @Override
+    public int hashCode() {
+        return new HashCodeBuilder().
+            append(id).
+            append(fitness).
+            append(dna.toArray()).
+            toHashCode();
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (!(obj instanceof Genome))
+            return false;
+        if (obj == this)
+            return true;
+
+        Genome rhs = (Genome) obj;
+        return new EqualsBuilder().
+            append(id, rhs.id).
+            append(fitness, rhs.fitness).
+            append(dna.toArray(), rhs.dna.toArray()).
+            isEquals();
     }
 }
