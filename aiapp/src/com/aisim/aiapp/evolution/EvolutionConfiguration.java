@@ -10,4 +10,5 @@ public interface EvolutionConfiguration {
     int getEpochsCount();
     long getEpochLengthInTimeUnits();
     PopulationConfiguration getPopulationConfiguration();
+    boolean getLoadLatestEpoch();
 }

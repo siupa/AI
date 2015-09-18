@@ -2,7 +2,11 @@ package aitests;
 
 import com.aisim.aiapp.evolution.DefaultEvolutionConfiguration;
 import com.aisim.aiapp.evolution.Evolution;
+import com.aisim.dal.EpochDataService;
+import com.aisim.dal.EpochDataServiceImpl;
+import com.aisim.dal.EpochProbesSqlLiteDao;
 import configuration.TestDefaultEvolutionConfiguration;
+import org.junit.After;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
@@ -14,9 +18,13 @@ import static org.junit.Assert.*;
 public class EvolutionTests {
 
     Evolution evolution;
+    EpochDataService dataService;
 
     public EvolutionTests() {
-        evolution = new Evolution(new TestDefaultEvolutionConfiguration());
+        dataService = new EpochDataServiceImpl(new EpochProbesSqlLiteDao("../database"),
+                new TestDefaultEvolutionConfiguration().getPopulationConfiguration().getPerceptronConfiguration());
+        evolution = new Evolution(
+                new TestDefaultEvolutionConfiguration(), dataService);
     }
 
     @Test
@@ -31,7 +39,13 @@ public class EvolutionTests {
         evolution.init();
         evolution.update();
         evolution.update();
-        assertTrue(evolution.getCurrentEpochAge() == 2);
-        assertTrue(evolution.getCurrentEpoch().getId() == 1);
+        evolution.update();
+        assertTrue("Evolution current Epoch age is 3", evolution.getCurrentEpochAge() == 0);
+        assertTrue("Evolution current Epoch id is 2", evolution.getCurrentEpoch().getId() == 2);
+    }
+
+    @After
+    public void tearDown() throws Exception {
+        dataService.clearEvolution(evolution.getId());
     }
 }

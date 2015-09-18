@@ -115,7 +115,7 @@ public class EpochProbesDaoTests {
 				add(4f);
 			}
 		}));
-		assertTrue(repo.retrieveLatest().size() == 3);
+		assertEquals("Number of latest probes should be 3", 3, repo.retrieveLatest().size());
 	}
 
 	@After

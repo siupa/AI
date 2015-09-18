@@ -1,6 +1,7 @@
 CREATE TABLE IF NOT EXISTS probe (
   id          ObjectId PRIMARY KEY,
   evolutionId INT,
+  dateCreated DATETIME,
   epochId     INT,
   genomeId    INT,
   fitness     FLOAT,

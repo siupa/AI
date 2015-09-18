@@ -22,4 +22,9 @@ public class DefaultEvolutionConfiguration implements EvolutionConfiguration {
     public PopulationConfiguration getPopulationConfiguration() {
         return new DefaultPopulationConfiguration();
     }
+
+    @Override
+    public boolean getLoadLatestEpoch() {
+        return false;
+    }
 }

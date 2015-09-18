@@ -15,11 +15,16 @@ public class TestDefaultEvolutionConfiguration implements EvolutionConfiguration
 
     @Override
     public long getEpochLengthInTimeUnits() {
-        return 10;
+        return 3;
     }
 
     @Override
     public PopulationConfiguration getPopulationConfiguration() {
         return new TestDefaultPopulationConfiguration();
+    }
+
+    @Override
+    public boolean getLoadLatestEpoch() {
+        return true;
     }
 }

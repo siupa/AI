@@ -2,7 +2,8 @@ package com.aisim.aiapp;
 
 import com.aisim.aiapp.evolution.DefaultEvolutionConfiguration;
 import com.aisim.aiapp.evolution.Evolution;
-import com.aisim.aiapp.evolution.DisplayImpl;
+import com.aisim.dal.EpochDataServiceImpl;
+import com.aisim.dal.EpochProbesSqlLiteDao;
 import com.jme3.app.SimpleApplication;
 import com.jme3.material.Material;
 import com.jme3.math.ColorRGBA;
@@ -17,7 +18,8 @@ public class Main extends SimpleApplication {
     public Main() {
         hud = new Hud(this);
         evolution = new Evolution(
-                new DefaultEvolutionConfiguration());
+                new DefaultEvolutionConfiguration(), new EpochDataServiceImpl(new EpochProbesSqlLiteDao("../database"),
+                new DefaultEvolutionConfiguration().getPopulationConfiguration().getPerceptronConfiguration()));
     }
 
     public static void main(String[] args) {

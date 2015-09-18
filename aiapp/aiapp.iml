@@ -10,5 +10,6 @@
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="module" module-name="ai" />
     <orderEntry type="library" name="jme3" level="project" />
+    <orderEntry type="module" module-name="connector" />
   </component>
 </module>
