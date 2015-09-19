@@ -11,5 +11,6 @@
     <orderEntry type="module" module-name="ai" />
     <orderEntry type="library" name="jme3" level="project" />
     <orderEntry type="module" module-name="connector" />
+    <orderEntry type="library" name="Maven: joda-time:joda-time:2.8.2" level="project" />
   </component>
 </module>

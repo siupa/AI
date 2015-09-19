@@ -3,7 +3,7 @@ package com.aisim.aiapp;
 import com.aisim.aiapp.evolution.DefaultEvolutionConfiguration;
 import com.aisim.aiapp.evolution.Evolution;
 import com.aisim.dal.EpochDataServiceImpl;
-import com.aisim.dal.EpochProbesSqlLiteDao;
+import com.aisim.dal.sqllite.EpochProbesSqlLiteDao;
 import com.jme3.app.SimpleApplication;
 import com.jme3.material.Material;
 import com.jme3.math.ColorRGBA;

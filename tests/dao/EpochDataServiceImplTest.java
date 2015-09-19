@@ -5,16 +5,19 @@ import com.aisim.ai.ann.DefaultPerceptronProvider;
 import com.aisim.ai.ga.DefaultPopulationConfiguration;
 import com.aisim.ai.ga.Epoch;
 import com.aisim.ai.ga.Population;
-import com.aisim.dal.EpochDataService;
+import com.aisim.dal.model.EpochDataService;
 import com.aisim.dal.EpochDataServiceImpl;
-import com.aisim.dal.EpochProbesMongodbDao;
+import com.aisim.dal.mongodb.EpochProbesMongodbDao;
 import com.mongodb.MongoClient;
+import org.joda.time.DateTime;
 import org.junit.After;
 import org.junit.Test;
-import static org.junit.Assert.*;
+
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotEquals;
 
 /**
- * ai 
+ * ai
  * Created by Krzysztof Slupski on 9/13/2015.
  */
 public class EpochDataServiceImplTest {
@@ -28,10 +31,10 @@ public class EpochDataServiceImplTest {
 
     @Test
     public void testSaveAndLoad() throws Exception {
-        service.save(TEST_EVOLUTION_ID, Epoch.create(TEST_EPOCH_ID, new Population(new DefaultPopulationConfiguration(), new DefaultPerceptronProvider())));
-        Epoch epoch = service.loadLatest();
-        assertTrue(epoch.getId() == TEST_EPOCH_ID);
-        assertTrue(epoch.getPopulation().getGenomes().size() > 0);
+        service.save(TEST_EVOLUTION_ID, DateTime.now(), Epoch.create(TEST_EPOCH_ID, new Population(new DefaultPopulationConfiguration(), new DefaultPerceptronProvider())));
+        Epoch epoch = service.load(TEST_EVOLUTION_ID, TEST_EPOCH_ID);
+        assertEquals(String.format("Epoch is retrieved with id %d", TEST_EPOCH_ID), TEST_EPOCH_ID, epoch.getId());
+        assertNotEquals("Epoch population has some genomes", epoch.getPopulation().getGenomes().size(), 0);
     }
 
     @After

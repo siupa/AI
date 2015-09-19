@@ -1,10 +1,9 @@
 package aitests;
 
-import com.aisim.aiapp.evolution.DefaultEvolutionConfiguration;
 import com.aisim.aiapp.evolution.Evolution;
-import com.aisim.dal.EpochDataService;
+import com.aisim.dal.model.EpochDataService;
 import com.aisim.dal.EpochDataServiceImpl;
-import com.aisim.dal.EpochProbesSqlLiteDao;
+import com.aisim.dal.sqllite.EpochProbesSqlLiteDao;
 import configuration.TestDefaultEvolutionConfiguration;
 import org.junit.After;
 import org.junit.Test;

@@ -1,22 +1,19 @@
 package dao;
 
-import com.aisim.dal.EpochProbesDao;
-import com.aisim.dal.EpochProbesMongodbDao;
-import com.aisim.dal.EpochProbesSqlLiteDao;
-import com.aisim.dal.Probe;
-import com.almworks.sqlite4java.SQLiteConnection;
-import com.almworks.sqlite4java.SQLiteStatement;
+import com.aisim.dal.model.EpochProbesDao;
+import com.aisim.dal.model.LatestEpochInfo;
+import com.aisim.dal.model.Probe;
+import com.aisim.dal.mongodb.EpochProbesMongodbDao;
+import com.aisim.dal.sqllite.EpochProbesSqlLiteDao;
 import com.mongodb.MongoClient;
 import org.bson.types.ObjectId;
+import org.joda.time.DateTime;
 import org.junit.After;
 import org.junit.Test;
 
 import static org.junit.Assert.*;
 
-import java.io.File;
 import java.util.ArrayList;
-import java.util.LinkedList;
-import java.util.List;
 
 /**
  * ai
@@ -54,7 +51,7 @@ public class EpochProbesDaoTests {
 	}
 
 	private void saveTest() throws Exception {
-		repo.create(new Probe(ObjectId.get(), TEST_EVOLUTION_ID, TEST_EPOCH_ID, 1, 0.34f, new ArrayList<Float>() {
+		repo.create(new Probe(ObjectId.get(), TEST_EVOLUTION_ID, DateTime.now(), TEST_EPOCH_ID, 1, 0.34f, new ArrayList<Float>() {
 			{
 				add(0.5f);
 				add(0.15f);
@@ -63,7 +60,7 @@ public class EpochProbesDaoTests {
 				add(120.522f);
 			}
 		}));
-		repo.create(new Probe(ObjectId.get(), TEST_EVOLUTION_ID, TEST_EPOCH_ID, 2, 12.34f, new ArrayList<Float>() {
+		repo.create(new Probe(ObjectId.get(), TEST_EVOLUTION_ID, DateTime.now(), TEST_EPOCH_ID, 2, 12.34f, new ArrayList<Float>() {
 			{
 				add(0.23f);
 				add(10.15f);
@@ -75,7 +72,7 @@ public class EpochProbesDaoTests {
 	}
 
 	private void retrieveLatestTest() throws Exception {
-		repo.create(new Probe(ObjectId.get(), TEST_EVOLUTION_ID, TEST_EPOCH_ID, 1, 0.34f, new ArrayList<Float>() {
+		repo.create(new Probe(ObjectId.get(), TEST_EVOLUTION_ID, DateTime.now(), TEST_EPOCH_ID, 1, 0.34f, new ArrayList<Float>() {
 			{
 				add(0.5f);
 				add(0.15f);
@@ -84,7 +81,7 @@ public class EpochProbesDaoTests {
 				add(120.522f);
 			}
 		}));
-		repo.create(new Probe(ObjectId.get(), TEST_EVOLUTION_ID, TEST_EPOCH_ID, 2, 12.34f, new ArrayList<Float>() {
+		repo.create(new Probe(ObjectId.get(), TEST_EVOLUTION_ID, DateTime.now(), TEST_EPOCH_ID, 2, 12.34f, new ArrayList<Float>() {
 			{
 				add(0.23f);
 				add(10.15f);
@@ -92,7 +89,7 @@ public class EpochProbesDaoTests {
 				add(112320.522f);
 			}
 		}));
-		repo.create(new Probe(ObjectId.get(), TEST_EVOLUTION_ID + 1, TEST_EPOCH_ID, 1, 0.34f, new ArrayList<Float>() {
+		repo.create(new Probe(ObjectId.get(), TEST_EVOLUTION_ID + 1, DateTime.now(), TEST_EPOCH_ID, 1, 0.34f, new ArrayList<Float>() {
 			{
 				add(0.5f);
 				add(0.15f);
@@ -101,7 +98,7 @@ public class EpochProbesDaoTests {
 				add(120.522f);
 			}
 		}));
-		repo.create(new Probe(ObjectId.get(), TEST_EVOLUTION_ID + 1, TEST_EPOCH_ID, 2, 12.34f, new ArrayList<Float>() {
+		repo.create(new Probe(ObjectId.get(), TEST_EVOLUTION_ID + 1, DateTime.now(), TEST_EPOCH_ID + 1, 1, 12.34f, new ArrayList<Float>() {
 			{
 				add(0.23f);
 				add(10.15f);
@@ -109,13 +106,21 @@ public class EpochProbesDaoTests {
 				add(112320.522f);
 			}
 		}));
-		repo.create(new Probe(ObjectId.get(), TEST_EVOLUTION_ID + 1, TEST_EPOCH_ID, 3, 20.34f, new ArrayList<Float>() {
+		repo.create(new Probe(ObjectId.get(), TEST_EVOLUTION_ID + 1, DateTime.now(), TEST_EPOCH_ID + 1, 2, 2f, new ArrayList<Float>() {
 			{
 				add(55.23f);
 				add(4f);
 			}
 		}));
-		assertEquals("Number of latest probes should be 3", 3, repo.retrieveLatest().size());
+		repo.create(new Probe(ObjectId.get(), TEST_EVOLUTION_ID + 1, DateTime.now(), TEST_EPOCH_ID + 1, 3, 4.1f, new ArrayList<Float>() {
+			{
+				add(5.3f);
+				add(65.3f);
+				add(4f);
+			}
+		}));
+		LatestEpochInfo info = repo.getLatestEpochInfo();
+		assertEquals("Number of latest probes should be 3", 3, repo.retrieve(info.getEvolutionId(), info.getEpochId()).size());
 	}
 
 	@After

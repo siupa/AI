@@ -3,7 +3,7 @@ package aitests;
 import com.aisim.ai.ann.Perceptron;
 import com.aisim.ai.ann.PerceptronProvider;
 import com.aisim.ai.ga.Population;
-import configuration.TestDefaultPerceptronConfiguration;
+import com.aisim.ai.ga.PopulationConfiguration;
 import configuration.TestDefaultPopulationConfiguration;
 import org.junit.Test;
 
@@ -18,10 +18,11 @@ public class PopulationTests {
 
     Population population;
     public PopulationTests() {
-        population = new Population(new TestDefaultPopulationConfiguration(), new PerceptronProvider() {
+        final PopulationConfiguration configuration = new TestDefaultPopulationConfiguration();
+        population = new Population(configuration, new PerceptronProvider() {
             @Override
             public Perceptron getPerceptron() {
-                return new Perceptron(new TestDefaultPerceptronConfiguration());
+                return new Perceptron(configuration.getPerceptronConfiguration());
             }
         });
     }
