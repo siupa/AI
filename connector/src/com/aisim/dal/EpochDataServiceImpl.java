@@ -1,13 +1,12 @@
 package com.aisim.dal;
 
 import com.aisim.ai.ann.DefaultPerceptronProvider;
-import com.aisim.ai.ann.PerceptronConfiguration;
-import com.aisim.ai.ga.DefaultPopulationConfiguration;
 import com.aisim.ai.ga.Epoch;
 import com.aisim.ai.ga.Genome;
 import com.aisim.ai.ga.Population;
-import com.aisim.dal.model.EpochDataService;
-import com.aisim.dal.model.EpochProbesDao;
+import com.aisim.ai.ga.PopulationConfiguration;
+import com.aisim.dal.contracts.EpochDataService;
+import com.aisim.dal.contracts.EpochProbesDao;
 import com.aisim.dal.model.LatestEpochInfo;
 import com.aisim.dal.model.Probe;
 import com.google.common.base.Function;
@@ -24,11 +23,9 @@ import java.util.List;
 public class EpochDataServiceImpl implements EpochDataService {
 
 	EpochProbesDao dao;
-	PerceptronConfiguration perceptronConfiguration;
 
-	public EpochDataServiceImpl(EpochProbesDao dao, PerceptronConfiguration perceptronConfiguration) {
+	public EpochDataServiceImpl(EpochProbesDao dao) {
 		this.dao = dao;
-		this.perceptronConfiguration = perceptronConfiguration;
 	}
 
 	@Override
@@ -49,16 +46,16 @@ public class EpochDataServiceImpl implements EpochDataService {
 	}
 
 	@Override
-	public Epoch load(int evolutionId, long epochId) throws Exception {
+	public Epoch load(int evolutionId, long epochId, final PopulationConfiguration configuration) throws Exception {
 		try {
 			List<Probe> probes = dao.retrieve(evolutionId, epochId);
 			if (probes != null && probes.size() > 0) {
 				return Epoch.create(probes.get(0).getEpochId(), new Population(FluentIterable.from(probes).transform(new Function<Probe, Genome>() {
 					@Override
 					public Genome apply(Probe input) {
-						return new Genome(input.getGenomeId(), input.getGenomeWeights(), perceptronConfiguration);
+						return new Genome(input.getGenomeId(), input.getGenomeWeights(), configuration.getPerceptronConfiguration());
 					}
-				}).toList(), new DefaultPopulationConfiguration(), new DefaultPerceptronProvider()));
+				}).toList(), configuration, new DefaultPerceptronProvider()));
 			} else {
 				return null;
 			}

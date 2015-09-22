@@ -13,7 +13,7 @@ public class PerceptronLayer {
     private int inputsCount;
 
     public PerceptronLayer(int id, int size, int inputsCount) {
-        neurons = new LinkedList<PerceptronNeuron>();
+        neurons = new LinkedList<>();
         this.size = size;
         this.id = id;
         this.inputsCount = inputsCount;

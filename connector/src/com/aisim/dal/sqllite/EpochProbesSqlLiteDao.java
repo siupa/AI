@@ -1,6 +1,6 @@
 package com.aisim.dal.sqllite;
 
-import com.aisim.dal.model.EpochProbesDao;
+import com.aisim.dal.contracts.EpochProbesDao;
 import com.aisim.dal.model.LatestEpochInfo;
 import com.aisim.dal.model.Probe;
 import com.almworks.sqlite4java.SQLiteConnection;

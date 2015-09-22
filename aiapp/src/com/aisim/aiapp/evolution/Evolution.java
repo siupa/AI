@@ -2,10 +2,17 @@ package com.aisim.aiapp.evolution;
 
 import com.aisim.ai.ann.DefaultPerceptronProvider;
 import com.aisim.ai.ga.Epoch;
+import com.aisim.ai.ga.Genome;
 import com.aisim.ai.ga.Population;
-import com.aisim.dal.model.EpochDataService;
+import com.aisim.aiapp.game.Actor;
+import com.aisim.aiapp.game.Brain;
+import com.aisim.dal.contracts.EpochDataService;
 import com.aisim.dal.model.LatestEpochInfo;
+import com.google.common.base.Function;
+import com.google.common.collect.FluentIterable;
 import org.joda.time.DateTime;
+
+import java.util.List;
 
 /**
  * ai
@@ -37,14 +44,14 @@ public class Evolution {
         this.dataService = dataService;
     }
 
-    public void init() {
+    public List<Actor> init() {
         Population population = new Population(configuration.getPopulationConfiguration(), new DefaultPerceptronProvider());
         if (configuration.getLoadLatestEpoch())
             try {
                 LatestEpochInfo info = dataService.getLatestEpochInfo();
                 if (info != null) {
                     id = info.getEvolutionId() + 1;
-                    currentEpoch = dataService.load(info.getEvolutionId(), info.getEpochId());
+                    currentEpoch = dataService.load(info.getEvolutionId(), info.getEpochId(), configuration.getPopulationConfiguration());
                 }
                 if (currentEpoch == null)
                     currentEpoch = Epoch.create(1, population);
@@ -54,6 +61,13 @@ public class Evolution {
         else
             currentEpoch = Epoch.create(1, population);
         currentEpochAge = 0;
+
+        return FluentIterable.from(currentEpoch.getPopulation().getGenomes()).transform(new Function<Genome, Actor>() {
+            @Override
+            public Actor apply(Genome input) {
+                return new Actor(input.getId(), new Brain(input));
+            }
+        }).toList();
     }
 
     public boolean update() {

@@ -1,6 +1,6 @@
 package com.aisim.dal.mongodb;
 
-import com.aisim.dal.model.EpochProbesDao;
+import com.aisim.dal.contracts.EpochProbesDao;
 import com.aisim.dal.model.LatestEpochInfo;
 import com.aisim.dal.model.Probe;
 import com.mongodb.MongoClient;

@@ -1,6 +1,6 @@
 package dao;
 
-import com.aisim.dal.model.EpochProbesDao;
+import com.aisim.dal.contracts.EpochProbesDao;
 import com.aisim.dal.model.LatestEpochInfo;
 import com.aisim.dal.model.Probe;
 import com.aisim.dal.mongodb.EpochProbesMongodbDao;
@@ -127,5 +127,6 @@ public class EpochProbesDaoTests {
 	public void tearDown() throws Exception {
 		repo.clear(TEST_EVOLUTION_ID);
 		repo.clear(TEST_EVOLUTION_ID + 1);
+		repo = null;
 	}
 }

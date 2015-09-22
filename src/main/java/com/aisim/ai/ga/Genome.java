@@ -13,86 +13,92 @@ import java.util.List;
  * Created by Krzysztof Slupski on 3/5/2015.
  */
 public class Genome {
-    private long id;
-    private Float fitness;
-    private int fitnessPoints;
-    private List<Float> dna;
-    private Perceptron perceptron;
+	private long id;
+	private Float fitness;
+	private int fitnessPoints;
+	private List<Float> dna;
 
-    public Genome(long id, PerceptronProvider perceptronProvider) {
-        this.id = id;
-        this.fitness = 0.0f;
-        this.fitnessPoints = 0;
-        this.perceptron = perceptronProvider.getPerceptron();
-        this.dna = perceptron.flatten();
-    }
 
-    public Genome(long id, List<Float> dna, PerceptronConfiguration perceptronConfiguration) {
-        this.id = id;
-        this.fitness = 0.0f;
-        this.fitnessPoints = 0;
-        this.dna = dna;
-        this.perceptron = new Perceptron(perceptronConfiguration);
-        this.perceptron.restore(this.dna);
-    }
+	private Perceptron perceptron;
 
-    public long getId() {
-        return id;
-    }
+	public Genome(long id, PerceptronProvider perceptronProvider) {
+		this.id = id;
+		fitness = 0.0f;
+		fitnessPoints = 0;
+		perceptron = perceptronProvider.getPerceptron();
+		dna = perceptron.flatten();
+	}
 
-    public List<Float> getDna() {
-        return dna;
-    }
+	public Genome(long id, List<Float> dna, PerceptronConfiguration perceptronConfiguration) {
+		this.id = id;
+		fitness = 0.0f;
+		fitnessPoints = 0;
+		this.dna = dna;
+		perceptron = new Perceptron(perceptronConfiguration);
+		perceptron.restore(this.dna);
+	}
 
-    public void setDna(List<Float> dna) {
-        this.dna = dna;
-        perceptron.restore(dna);
-    }
+	public long getId() {
+		return id;
+	}
 
-    public Float getFitness() {
-        return fitness;
-    }
+	public List<Float> getDna() {
+		return dna;
+	}
 
-    public void incrementFitness(Float fitnessIncrement) {
-        fitness += fitnessIncrement;
-    }
+	public void setDna(List<Float> dna) {
+		this.dna = dna;
+		perceptron.restore(dna);
+	}
 
-    @Override
-    public String toString() {
-        StringBuilder builder = new StringBuilder();
-        builder.append(String.format("Genome %d [Fitness: %f]:\n", id, fitness));
-        builder.append(perceptron);
+	public Float getFitness() {
+		return fitness;
+	}
 
-        builder.append("DNA:");
-        for (Float w : dna) {
-            builder.append(w).append(",");
-        }
-        builder.replace(builder.length() - 1, builder.length(), "");
-        builder.append("\n");
-        return builder.toString();
-    }
+	public Perceptron getPerceptron() {
+		return perceptron;
+	}
 
-    @Override
-    public int hashCode() {
-        return new HashCodeBuilder().
-            append(id).
-            append(fitness).
-            append(dna.toArray()).
-            toHashCode();
-    }
+	public void incrementFitness(Float fitnessIncrement) {
+		fitness += fitnessIncrement;
+	}
 
-    @Override
-    public boolean equals(Object obj) {
-        if (!(obj instanceof Genome))
-            return false;
-        if (obj == this)
-            return true;
+	@Override
+	public String toString() {
+		StringBuilder builder = new StringBuilder();
+		builder.append(String.format("Genome %d [Fitness: %f]:\n", id, fitness));
+		builder.append(perceptron);
 
-        Genome rhs = (Genome) obj;
-        return new EqualsBuilder().
-            append(id, rhs.id).
-            append(fitness, rhs.fitness).
-            append(dna.toArray(), rhs.dna.toArray()).
-            isEquals();
-    }
+		builder.append("DNA:");
+		for (Float w : dna) {
+			builder.append(w).append(",");
+		}
+		builder.replace(builder.length() - 1, builder.length(), "");
+		builder.append("\n");
+		return builder.toString();
+	}
+
+	@Override
+	public int hashCode() {
+		return new HashCodeBuilder().
+			append(id).
+			append(fitness).
+			append(dna.toArray()).
+			toHashCode();
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (!(obj instanceof Genome))
+			return false;
+		if (obj == this)
+			return true;
+
+		Genome rhs = (Genome) obj;
+		return new EqualsBuilder().
+			append(id, rhs.id).
+			append(fitness, rhs.fitness).
+			append(dna.toArray(), rhs.dna.toArray()).
+			isEquals();
+	}
 }

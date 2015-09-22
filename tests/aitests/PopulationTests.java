@@ -7,6 +7,7 @@ import com.aisim.ai.ga.PopulationConfiguration;
 import configuration.TestDefaultPopulationConfiguration;
 import org.junit.Test;
 
+import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
 
@@ -29,7 +30,7 @@ public class PopulationTests {
     @Test
     public void populationTest() {
         Population newPopulation = population.reproduce();
-        assertTrue(newPopulation.getGenomes().size() == population.getGenomes().size());
-        assertTrue(population.getGenomes().retainAll(newPopulation.getGenomes()));
+        assertEquals("New population after reproducing process should be of the same size", newPopulation.getGenomes().size(), population.getGenomes().size());
+        assertTrue("New population is different from the original one", population.getGenomes().retainAll(newPopulation.getGenomes()));
     }
 }

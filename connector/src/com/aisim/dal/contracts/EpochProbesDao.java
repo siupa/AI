@@ -1,4 +1,8 @@
-package com.aisim.dal.model;
+package com.aisim.dal.contracts;
+
+import com.aisim.dal.model.LatestEpochInfo;
+import com.aisim.dal.model.Probe;
+
 import java.util.List;
 
 /**
@@ -13,10 +17,12 @@ public interface EpochProbesDao {
 	 * @throws Exception
 	 */
 	LatestEpochInfo getLatestEpochInfo() throws Exception;
+
 	List<Probe> retrieve(int evolutionId, long epochId) throws Exception;
 
 	/**
 	 * Removes all the data for the given evolutionId.
+	 *
 	 * @param evolutionId Id of the evolution to be cleared from the storage.
 	 * @throws Exception
 	 */

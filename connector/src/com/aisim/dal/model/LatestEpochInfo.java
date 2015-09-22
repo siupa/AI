@@ -7,25 +7,25 @@ import org.joda.time.DateTime;
  * Created by Krzysztof on 9/19/2015.
  */
 public class LatestEpochInfo {
-    private int evolutionId;
-    private DateTime createdOn;
-    private long epochId;
+	private final int evolutionId;
+	private final DateTime createdOn;
+	private final long epochId;
 
-    public LatestEpochInfo(int evolutionId, DateTime createdOn, long epochId) {
-        this.evolutionId = evolutionId;
-        this.createdOn = createdOn;
-        this.epochId = epochId;
-    }
+	public LatestEpochInfo(int evolutionId, DateTime createdOn, long epochId) {
+		this.evolutionId = evolutionId;
+		this.createdOn = createdOn;
+		this.epochId = epochId;
+	}
 
-    public int getEvolutionId() {
-        return evolutionId;
-    }
+	public int getEvolutionId() {
+		return evolutionId;
+	}
 
-    public DateTime getCreatedOn() {
-        return createdOn;
-    }
+	public DateTime getCreatedOn() {
+		return createdOn;
+	}
 
-    public long getEpochId() {
-        return epochId;
-    }
+	public long getEpochId() {
+		return epochId;
+	}
 }
