@@ -18,7 +18,6 @@ public class Population {
     private class ComparableSortedList extends SortedList<Genome> {
         public ComparableSortedList() {
             super(new Comparator<Genome>() {
-                @Override
                 public int compare(Genome g1, Genome g2) {
                     return g2.getFitness().compareTo(g1.getFitness());
                 }
@@ -56,7 +55,7 @@ public class Population {
 
     public Population reproduce() {
 
-        List<Genome> newChromosoms = new ArrayList<>();
+        List<Genome> newChromosoms = new ArrayList<Genome>();
         List<Genome> elite = selectElite(configuration.getElitePercentage());
         while (newChromosoms.size() < configuration.getChromosomsCount()) {
             Genome mum = roulette(elite);

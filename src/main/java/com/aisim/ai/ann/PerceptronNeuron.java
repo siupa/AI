@@ -13,7 +13,7 @@ public class PerceptronNeuron {
     private LinkedList<Float> weights;
 
     public PerceptronNeuron(int inputsCount) {
-        weights = new LinkedList<>();
+        weights = new LinkedList<Float>();
         for (int i = 0; i < inputsCount; i++) {
             weights.add(Helpers.randomClamped());
         }
