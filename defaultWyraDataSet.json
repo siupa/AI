@@ -1,0 +1,2235 @@
+{
+	"onboarding": [
+		{
+			"companyName": "Wyra",
+			"legalCompanyName": "Wyra mobility Inc.",
+			"addressLine1": "4341 Gateway Road",
+			"addressCity": "Portland",
+			"addressState": "OR",
+			"addressZip": "97230",
+			"phoneNumber":"+1 503-318-4139",
+			"offerings": ["PHYSICAL_PRODUCTS", "SERVICES"],
+			"manufacturing": false,
+			"customers": ["BUSINESSES"],
+			"fiscalCalendarStart": "JANUARY"
+		}
+	],
+	"accounts": [
+		{
+			"referenceableAlias": "account.USD Bank Account",
+			"accountName": "USD Bank Account",
+			"accountNumber": "1010",
+			"accountType": "Bank"
+		},
+		{
+			"referenceableAlias": "account.Petty cash",
+			"accountName": "Petty cash",
+			"accountNumber": "1000",
+			"accountType": "CashNCashEq"
+		},
+		{
+			"referenceableAlias": "account.Undeposited funds",
+			"accountName": "Undeposited funds",
+			"accountNumber": "1099",
+			"accountType": "UndepFunds",
+			"setAsDefaultInPreferences": ["UNDEPOSITED_FUNDS_ACCOUNT"]
+		},
+		{
+			"referenceableAlias": "account.Accounts receivable",
+			"accountName": "Accounts receivable",
+			"accountNumber": "1100",
+			"accountType": "AcctRec",
+			"setAsDefaultInPreferences": ["ARACCOUNT"]
+		},
+		{
+			"referenceableAlias": "account.Allowance for bad debt",
+			"accountName": "Allowance for bad debt",
+			"accountNumber": "1190",
+			"accountType": "AcctRec"
+		},
+		{
+			"referenceableAlias": "account.Inventory",
+			"accountName": "Inventory",
+			"accountNumber": "1200",
+			"accountType": "Inventory",
+			"setAsDefaultInPreferences": ["ASSETACCOUNT"]
+		},
+		{
+			"referenceableAlias": "account.Inventory in transit",
+			"accountName": "Inventory in transit",
+			"accountNumber": "1290",
+			"accountType": "Inventory",
+			"setAsDefaultInPreferences": ["INVENTORY_IN_TRANSIT_ACCOUNT"]
+		},
+		{
+			"referenceableAlias": "account.Deferred expense",
+			"accountName": "Deferred expense",
+			"accountNumber": "1300",
+			"accountType": "DeferExpense"
+		},
+		{
+			"referenceableAlias": "account.Advance payments",
+			"accountName": "Advance payments",
+			"accountNumber": "1310",
+			"accountType": "OthCurrAsset"
+		},
+		{
+			"referenceableAlias": "account.Unbilled receivable",
+			"accountName": "Unbilled receivable",
+			"accountNumber": "1320",
+			"accountType": "OthCurrAsset"
+		},
+		{
+			"referenceableAlias": "account.Accrued returns",
+			"accountName": "Accrued returns",
+			"accountNumber": "1390",
+			"accountType": "OthCurrAsset",
+			"setAsDefaultInPreferences": ["INVT_RETURNED_NOT_CREDITED_ACCOUNT"]
+		},
+		{
+			"referenceableAlias": "account.Property, plant, and equipment",
+			"accountName": "Property, plant, and equipment",
+			"accountNumber": "1400",
+			"accountType": "FixedAsset"
+		},
+		{
+			"referenceableAlias": "account.Accumulated depreciation",
+			"accountName": "Accumulated depreciation",
+			"accountNumber": "1490",
+			"accountType": "FixedAsset"
+		},
+		{
+			"referenceableAlias": "account.Intangible assets",
+			"accountName": "Intangible assets",
+			"accountNumber": "1500",
+			"accountType": "FixedAsset"
+		},
+		{
+			"referenceableAlias": "account.Amortization of intangible assets",
+			"accountName": "Amortization of intangible assets",
+			"accountNumber": "1590",
+			"accountType": "FixedAsset"
+		},
+		{
+			"referenceableAlias": "account.Notes receivable (long term)",
+			"accountName": "Notes receivable (long term)",
+			"accountNumber": "1900",
+			"accountType": "NonCurrAsset"
+		},
+		{
+			"referenceableAlias": "account.Accounts payable",
+			"accountName": "Accounts payable",
+			"accountNumber": "2100",
+			"accountType": "AcctPay",
+			"setAsDefaultInPreferences": ["ACCOUNTS_PAYABLE"]
+		},
+		{
+			"referenceableAlias": "account.Credit cards",
+			"accountName": "Credit cards",
+			"accountNumber": "2200",
+			"accountType": "CredCard"
+		},
+		{
+			"referenceableAlias": "account.Deferred revenue",
+			"accountName": "Deferred revenue",
+			"accountNumber": "2300",
+			"accountType": "DeferRevenue"
+		},
+		{
+			"referenceableAlias": "account.Accrued purchases",
+			"accountName": "Accrued purchases",
+			"accountNumber": "2400",
+			"accountType": "OthCurrLiab",
+			"setAsDefaultInPreferences": ["ACCRUED_PURCHASES_ACCOUNT"]
+		},
+		{
+			"referenceableAlias": "account.Payroll liabilities",
+			"accountName": "Payroll liabilities",
+			"accountNumber": "2500",
+			"accountType": "OthCurrLiab"
+		},
+		{
+			"referenceableAlias": "account.Notes payable (short term)",
+			"accountName": "Notes payable (short term)",
+			"accountNumber": "2700",
+			"accountType": "OthCurrLiab"
+		},
+		{
+			"referenceableAlias": "account.Notes payable (long term)",
+			"accountName": "Notes payable (long term)",
+			"accountNumber": "2800",
+			"accountType": "NonCurrLiab"
+		},
+		{
+			"referenceableAlias": "account.Deferred tax liabilities",
+			"accountName": "Deferred tax liabilities",
+			"accountNumber": "2900",
+			"accountType": "NonCurrLiab"
+		},
+		{
+			"referenceableAlias": "account.Share capital",
+			"accountName": "Share capital",
+			"accountNumber": "3000",
+			"accountType": "Equity"
+		},
+		{
+			"referenceableAlias": "account.Retained earnings",
+			"accountName": "Retained earnings",
+			"accountNumber": "3100",
+			"accountType": "Equity"
+		},
+		{
+			"referenceableAlias": "account.Sales",
+			"accountName": "Sales",
+			"accountNumber": "4000",
+			"accountType": "Revenue",
+			"setAsDefaultInPreferences": ["INCOMEACCOUNT"]
+		},
+		{
+			"referenceableAlias": "account.Service revenues",
+			"accountName": "Service revenues",
+			"accountNumber": "4100",
+			"accountType": "Revenue"
+		},
+		{
+			"referenceableAlias": "account.Shipping and handling",
+			"accountName": "Shipping and handling",
+			"accountNumber": "4200",
+			"accountType": "Revenue"
+		},
+		{
+			"referenceableAlias": "account.Sales returns and allowances",
+			"accountName": "Sales returns and allowances",
+			"accountNumber": "4700",
+			"accountType": "Revenue"
+		},
+		{
+			"referenceableAlias": "account.Sales discounts",
+			"accountName": "Sales discounts",
+			"accountNumber": "4750",
+			"accountType": "Revenue",
+			"setAsDefaultInPreferences": ["EARLY_PAYMENT_DISCOUNT_ACCOUNT"]
+		},
+		{
+			"referenceableAlias": "account.Fees earned",
+			"accountName": "Fees earned",
+			"accountNumber": "4800",
+			"accountType": "Revenue"
+		},
+		{
+			"referenceableAlias": "account.Cost of sales",
+			"accountName": "Cost of sales",
+			"accountNumber": "5000",
+			"accountType": "COGS",
+			"setAsDefaultInPreferences": ["COGSACCOUNT", "CUSTOMERRETURNVARIANCEACCOUNT"]
+		},
+		{
+			"referenceableAlias": "account.Freight and delivery",
+			"accountName": "Freight and delivery",
+			"accountNumber": "5100",
+			"accountType": "COGS"
+		},
+		{
+			"referenceableAlias": "account.Inventory adjustment",
+			"accountName": "Inventory adjustment",
+			"accountNumber": "5200",
+			"accountType": "COGS"
+		},
+		{
+			"referenceableAlias": "account.Purchase returns and allowances",
+			"accountName": "Purchase returns and allowances",
+			"accountNumber": "5900",
+			"accountType": "COGS",
+			"setAsDefaultInPreferences": ["VENDRETURNVARIANCEACCOUNT"]
+		},
+		{
+			"referenceableAlias": "account.Amortization expense",
+			"accountName": "Amortization expense",
+			"accountNumber": "6000",
+			"accountType": "Expense"
+		},
+		{
+			"referenceableAlias": "account.Depreciation expense",
+			"accountName": "Depreciation expense",
+			"accountNumber": "6010",
+			"accountType": "Expense"
+		},
+		{
+			"referenceableAlias": "account.Rent expense",
+			"accountName": "Rent expense",
+			"accountNumber": "6100",
+			"accountType": "Expense"
+		},
+		{
+			"referenceableAlias": "account.Utilities expense",
+			"accountName": "Utilities expense",
+			"accountNumber": "6110",
+			"accountType": "Expense"
+		},
+		{
+			"referenceableAlias": "account.Delivery expense",
+			"accountName": "Delivery expense",
+			"accountNumber": "6120",
+			"accountType": "Expense"
+		},
+		{
+			"referenceableAlias": "account.Salaries expense",
+			"accountName": "Salaries expense",
+			"accountNumber": "6200",
+			"accountType": "Expense"
+		},
+		{
+			"referenceableAlias": "account.Miscellaneous expense",
+			"accountName": "Miscellaneous expense",
+			"accountNumber": "6300",
+			"accountType": "Expense",
+			"setAsDefaultInPreferences": ["PURCHASEPRICEVARIANCEACCT", "EXPENSEACCOUNT"]
+		},
+		{
+			"referenceableAlias": "account.Interest income",
+			"accountName": "Interest income",
+			"accountNumber": "7000",
+			"accountType": "NonOpIncome"
+		},
+		{
+			"referenceableAlias": "account.Interest expense",
+			"accountName": "Interest expense",
+			"accountNumber": "8000",
+			"accountType": "NonOpExpense"
+		},
+		{
+			"referenceableAlias": "account.Rounding gain/loss",
+			"accountName": "Rounding gain/loss",
+			"accountNumber": "8100",
+			"accountType": "NonOpExpense",
+			"setAsDefaultInPreferences": ["ROUNDING_GAIN_LOSS_ACCOUNT"]
+		}
+	],
+	"contacts": [
+		{
+			"referenceableAlias": "contact.Lamar Neal",
+			"company": "{vendor.Rexon}",
+			"firstName": "Lamar",
+			"lastName": "Neal",
+			"externalId": "lamar_neal",
+			"mobilePhoneNumber": "1 (405) 459-4013",
+			"workEmail": "lamar@rexon.com"
+		},
+		{
+			"referenceableAlias": "contact.Daniel Dillard",
+			"company": "{vendor.Tonic}",
+			"firstName": "Daniel",
+			"lastName": "Dillard",
+			"externalId": "daniel_dillard",
+			"mobilePhoneNumber": "1 (952) 358-2042",
+			"workEmail": "daneil@tonic.com"
+		},
+		{
+			"referenceableAlias": "contact.Raja Head",
+			"company": "{vendor.Garmin}",
+			"firstName": "Raja",
+			"lastName": "Head",
+			"externalId": "raja_head",
+			"mobilePhoneNumber": "1 (952) 784-4854",
+			"workEmail": "raja@garmin.com"
+		},
+		{
+			"referenceableAlias": "contact.Reed Lamb",
+			"company": "{vendor.Core 4 Solutions}",
+			"firstName": "Reed",
+			"lastName": "Lamb",
+			"externalId": "reed_lamb",
+			"mobilePhoneNumber": "1 (720) 555-2091",
+			"workEmail": "reed@c4s.com"
+		},
+		{
+			"referenceableAlias": "contact.Hiram Booker",
+			"company": "{vendor.Crown Equipment Corporation}",
+			"firstName": "Hiram",
+			"lastName": "Booker",
+			"externalId": "hiram_booker",
+			"mobilePhoneNumber": "1 (631) 555-122",
+			"workEmail": "hiram@crown.com"
+		},
+		{
+			"referenceableAlias": "contact.Akeem Fitpatrick",
+			"company": "{vendor.PG&E}",
+			"firstName": "Akeem",
+			"lastName": "Fitpatrick",
+			"externalId": "akeem_Fitpatrick",
+			"mobilePhoneNumber": "1 (305) 579-16",
+			"workEmail": "akeem@PGE.com"
+		},
+		{
+			"referenceableAlias": "contact.John Rodrigues",
+			"company": "{vendor.WeWork}",
+			"firstName": "John",
+			"lastName": "Rodrihuez",
+			"externalId": "john_rodriguez",
+			"mobilePhoneNumber": "1 (305) 579-1724",
+			"workEmail": "John@WeWork.com"
+		},
+		{
+			"referenceableAlias": "contact.Lisa Montoya",
+			"company": "{vendor.Cars Direct}",
+			"firstName": "Lisa",
+			"lastName": "Montoya",
+			"externalId": "lisa_montoya",
+			"mobilePhoneNumber": "1 (310) 280-4009",
+			"workEmail": "Lisa@carsdirect.com"
+		},
+		{
+			"referenceableAlias": "contact.Barbara Lynn Jones",
+			"company": "{customer.Awesome Fit}",
+			"firstName": "Barbara",
+			"lastName": "Jones",
+			"middleName": "Lynn",
+			"preferredFirstName": "Barb",
+			"externalId": "barbara_lynn_jones",
+			"mobilePhoneNumber": "650-123-1234",
+			"officePhoneNumber": "800-888-8800",
+			"workEmail": "barbara@awesomefit.com",
+			"jobTitle": "Purchasing Manager",
+			"responsibility": "-60",
+			"isInactive": false,
+			"memo": "Barbara is their main purchasing manager",
+			"addressLine1": "34 Grove St",
+			"addressLine2": "Apartment 2b",
+			"city": "San Francisco",
+			"subdivision": "4",
+			"postalCode": "94104"
+		},
+		{
+			"referenceableAlias": "contact.Jenny Jones",
+			"company": "{customer.Awesome Fit}",
+			"firstName": "Jenny",
+			"lastName": "Jones",
+			"externalId": "jenny_jones",
+			"mobilePhoneNumber": "555-123-4568",
+			"officePhoneNumber": "800-888-8800",
+			"workEmail": "jenny.jones@awesomefit.com",
+			"responsibility": "-70",
+			"isInactive": false
+		},
+		{
+			"referenceableAlias": "contact.Bill Hodge",
+			"company": "{customer.Davidson Fitness}",
+			"firstName": "Bill",
+			"lastName": "Hodge",
+			"externalId": "bill_hodge",
+			"workEmail": "bill@davidsonfitness.com",
+			"responsibility": "-30",
+			"isInactive": false
+		},
+		{
+			"referenceableAlias": "contact.Jade Billings",
+			"company": "{customer.Katya's Cycling}",
+			"firstName": "Jade",
+			"lastName": "Billings",
+			"externalId": "jade_billings",
+			"workEmail": "Jade@katyascycling.com",
+			"responsibility": "-70",
+			"isInactive": true
+		},
+		{
+			"referenceableAlias": "contact.Logan Miller",
+			"company": "{customer.Mind Cycle}",
+			"firstName": "Logan",
+			"lastName": "Miller",
+			"externalId": "logan_miller",
+			"workEmail": "Logan@mindcycle.com",
+			"responsibility": "-70",
+			"isInactive": false
+		},
+		{
+			"referenceableAlias": "contact.James Kilmer",
+			"company": "{customer.Body by Bob}",
+			"firstName": "James",
+			"lastName": "Kilmer",
+			"externalId": "james_kilmer",
+			"workEmail": "james@bodybybob.com",
+			"responsibility": "-70",
+			"isInactive": true
+		}
+	],
+	"customerCategories": [
+		{
+			"referenceableAlias": "customerCategory.B2B",
+			"name": "B2B",
+			"externalId": "b2b"
+		},
+		{
+			"referenceableAlias": "customerCategory.B2C",
+			"name": "B2C",
+			"externalId": "b2c"
+		}
+	],
+	"customers": [
+		{
+			"referenceableAlias": "customer.Awesome Fit",
+			"customerType": "Company",
+			"shortCompanyName": "Awesome Fit",
+			"legalCompanyName": "Awersome Fit Inc.",
+			"customerCategoryId": "{customerCategory.B2B}",
+			"companyPhoneNumber": "650-555-2000",
+			"companyEmail": "info@awesomefit.com",
+			"companyWebsite": "https://www.awesomefit.com",
+			"isInactive": false,
+			"memo": "This customer is interested in our range of indoor bikes",
+			"billingAddressAddressLine1": "805 Cherry Avenue",
+			"billingAddressAddressLine2": "Apartment 1c",
+			"billingAddressCity": "San Francisco",
+			"billingAddressSubdivision": "4",
+			"billingAddressPostalCode": "94403",
+			"shippingAddressAddressLine1": "805 Cherry Avenue",
+			"shippingAddressAddressLine2": "Apartment 1c",
+			"shippingAddressCity": "San Francisco",
+			"shippingAddressSubdivision": "4",
+			"shippingAddressPostalCode": "94403",
+			"termId": "{standardTerm.Net 30}"
+		},
+		{
+			"referenceableAlias": "customer.Davidson Fitness",
+			"customerType": "Company",
+			"shortCompanyName": "Davidson Fitness",
+			"customerCategoryId": "{customerCategory.B2B}",
+			"companyPhoneNumber": "760-230-9617",
+			"companyEmail": "info@davidsonfitness.com",
+			"isInactive": false,
+			"billingAddressAddressLine1": "346 W Grand Ave",
+			"billingAddressCity": "San Mateo",
+			"billingAddressSubdivision": "4",
+			"billingAddressPostalCode": "92025",
+			"shippingAddressAddressLine1": "346 W Grand Ave",
+			"shippingAddressCity": "San Mateo",
+			"shippingAddressSubdivision": "4",
+			"shippingAddressPostalCode": "92025",
+			"termId": "{standardTerm.Net 30}"
+		},
+		{
+			"referenceableAlias": "customer.Katya's Cycling",
+			"customerType": "Company",
+			"shortCompanyName": "Katya's Cycling",
+			"customerCategoryId": "{customerCategory.B2B}",
+			"companyPhoneNumber": "210-295-6499",
+			"companyEmail": "info@katyascycling.com",
+			"isInactive": false,
+			"billingAddressAddressLine1": "7626 Culebra Rd",
+			"billingAddressCity": "Escondido",
+			"billingAddressSubdivision": "44",
+			"billingAddressPostalCode": "78251",
+			"shippingAddressAddressLine1": "7626 Culebra Rd",
+			"shippingAddressCity": "Escondido",
+			"shippingAddressSubdivision": "44",
+			"shippingAddressPostalCode": "78251",
+			"termId": "{standardTerm.Net 30}"
+		},
+		{
+			"referenceableAlias": "customer.Mind Cycle",
+			"customerType": "Company",
+			"shortCompanyName": "Mind Cycle",
+			"customerCategoryId": "{customerCategory.B2B}",
+			"companyPhoneNumber": "631-555-0200",
+			"companyEmail": "info@mindcycle.com",
+			"isInactive": false,
+			"billingAddressAddressLine1": "7 Main St",
+			"billingAddressCity": "San Antonio",
+			"billingAddressSubdivision": "32",
+			"billingAddressPostalCode": "11963",
+			"shippingAddressAddressLine1": "7 Main St",
+			"shippingAddressCity": "San Antonio",
+			"shippingAddressSubdivision": "32",
+			"shippingAddressPostalCode": "11963",
+			"termId": "{standardTerm.Net 30}"
+		},
+		{
+			"referenceableAlias": "customer.Body by Bob",
+			"customerType": "Company",
+			"shortCompanyName": "Body by Bob",
+			"customerCategoryId": "{customerCategory.B2B}",
+			"companyPhoneNumber": "718-570-5644",
+			"companyEmail": "info@bodybybob.com",
+			"isInactive": false,
+			"billingAddressAddressLine1": "108th Street",
+			"billingAddressCity": "Sag Harbor",
+			"billingAddressSubdivision": "32",
+			"billingAddressPostalCode": "11368",
+			"shippingAddressAddressLine1": "108th Street",
+			"shippingAddressCity": "Sag Harbor",
+			"shippingAddressSubdivision": "32",
+			"shippingAddressPostalCode": "11368",
+			"termId": "{standardTerm.Net 30}"
+		}
+	],
+	"locations": [
+		{
+			"referenceableAlias": "location.Main Office",
+			"name": "Main Office",
+			"externalId": "mainOffice",
+			"subsidiary": "1",
+			"subdivision": "4",
+			"city": "Redwood City",
+			"postalCode": "94065",
+			"addressLine1": "100 Oracle Pkwy",
+			"recipientLine1": "Wyra Co."
+		},
+		{
+			"referenceableAlias": "location.US 1 Warehouse",
+			"name": "US 1 Warehouse",
+			"externalId": "us1Warehouse",
+			"subsidiary": "1",
+			"subdivision": "5",
+			"city": "Boulder",
+			"postalCode": "80305",
+			"addressLine1": "2460 Baseline Rd",
+			"recipientLine1": "Wyra Co."
+		},
+		{
+			"referenceableAlias": "location.US 1 Quarantine",
+			"name": "US 1 Quarantine",
+			"externalId": "us1Quarantine",
+			"subsidiary": "1",
+			"subdivision": "4",
+			"city": "El Segundo",
+			"postalCode": "90245",
+			"addressLine1": "915 N Sepulveda Blvd",
+			"recipientLine1": "Wyra Co."
+		},
+		{
+			"referenceableAlias": "location.US 1 Receiving",
+			"name": "US 1 Receiving",
+			"externalId": "us1Receiving",
+			"subsidiary": "1",
+			"subdivision": "32",
+			"city": "New York",
+			"postalCode": "10022",
+			"addressLine1": "590 Lexington Avenue",
+			"recipientLine1": "Wyra Co."
+		}
+	],
+	"notes": [
+		{
+			"referenceableAlias": "note.Meeting with AwesomeFit (Barbara) offering the new sensors",
+			"title": "Meeting with AwesomeFit (Barbara) offering the new sensors",
+			"note": "Presented the new line of sensors to Barbara with AwesomeFit, she is interested and asked for a second meeting to discuss terms and delivery.",
+			"noteDate": "2022-04-29T14:30:24.00Z",
+			"noteType": "6",
+			"entity": "{contact.Barbara Lynn Jones}"
+		},
+		{
+			"referenceableAlias": "note.Information on Stationary Bike",
+			"title": "Information on Stationary Bike",
+			"note": "Hello, I'm interested in the Stationary Bike and, before I decide, I would like to receive information on the product in order to learn a bit more about it. Thanks.",
+			"noteDate": "2022-04-27T09:15:24.00Z",
+			"noteType": "3",
+			"entity": "{contact.Logan Miller}"
+		},
+		{
+			"referenceableAlias": "note.Bill has requested a return",
+			"title": "Bill has requested a return",
+			"note": "Bill called asking for a return because one of the Sensors is not working. Need to call him back once we have the replacement product.",
+			"noteDate": "2022-05-02T17:25:24.00Z",
+			"noteType": "8",
+			"entity": "{contact.Bill Hodge}"
+		},
+		{
+			"referenceableAlias": "note.Sensor Installation",
+			"title": "Sensor Installation",
+			"note": "Barbara called to schedule the sensor installation, need to call her back as soon as we have a spot in the schedule.",
+			"noteDate": "2022-04-30T15:30:24.00Z",
+			"noteType": "8",
+			"entity": "{contact.Barbara Lynn Jones}"
+		},
+		{
+			"referenceableAlias": "note.Contact Information update",
+			"title": "Contact Information update",
+			"note": "Contact billing needs to be verified before first order.",
+			"noteDate": "2022-05-09T12:23:24.00Z",
+			"noteType": "7",
+			"entity": "{contact.Logan Miller}"
+		}
+	],
+	"paymentMethods": [
+		{
+			"referenceableAlias": "paymentMethod.Wire to USD Bank",
+			"name": "Wire to USD Bank",
+			"paymentMethodType": "WIRE",
+			"account": "{account.USD Bank Account}"
+		},
+		{
+			"referenceableAlias": "paymentMethod.Check",
+			"name": "Check",
+			"paymentMethodType": "CHECK",
+			"account": "{account.Undeposited funds}"
+		},
+		{
+			"referenceableAlias": "paymentMethod.Cash",
+			"name": "Cash",
+			"paymentMethodType": "CASH",
+			"account": "{account.Undeposited funds}"
+		}
+	],
+	"persons": [
+		{
+			"referenceableAlias": "person.finely_laurant",
+			"firstName": "Finley",
+			"lastName": "Laurant",
+			"externalId": "finely_laurant",
+			"title": "CEO/Founder",
+			"personalEmail": "finley.laurant.wyra@netsuite.com",
+			"homePhoneNumber": "+1 (650) 999-5578",
+			"gender": "FEMALE",
+			"birthDate": "1989-07-06",
+			"addressLine1": "724 South Amphlett Blvd",
+			"subDivision": "4",
+			"city": "San Mateo",
+			"postalCode": "94402",
+			"workEmail": "finley.laurant.wyra@netsuite.com"
+		},
+		{
+			"referenceableAlias": "person.parker_james",
+			"firstName": "Parker",
+			"lastName": "James",
+			"externalId": "parker_james",
+			"title": "Finance",
+			"personalEmail": "parker.james.wyra@netsuite.com",
+			"homePhoneNumber": "+1 (415) 888-1013",
+			"gender": "MALE",
+			"addressLine1": "1450 Post St",
+			"subDivision": "4",
+			"city": "San Francisco",
+			"postalCode": "94109",
+			"workEmail": "parker.james.wyra@netsuite.com"
+		},
+		{
+			"referenceableAlias": "person.beth_hernandez",
+			"firstName": "Beth",
+			"lastName": "Hernandez",
+			"externalId": "beth_hernandez",
+			"title": "Bookkeper",
+			"personalEmail": "beth.hernandez.wyra@netsuite.com",
+			"homePhoneNumber": "+1 (858) 385-9663",
+			"gender": "FEMALE",
+			"addressLine1": "12345 Carmel Mountain Rd",
+			"subDivision": "4",
+			"city": "San Diego",
+			"postalCode": "92128",
+			"workEmail": "beth.hernandez.wyra@netsuite.com"
+		},
+		{
+			"referenceableAlias": "person.anesh_kapoor",
+			"firstName": "Anesh",
+			"lastName": "Kapoor",
+			"externalId": "anesh_kapoor",
+			"title": "Accountant (Contractor)",
+			"personalEmail": "anesh.wyra@netsuite.com",
+			"homePhoneNumber": "+1 (555) 123-4567",
+			"gender": "MALE",
+			"addressLine1": "33 E 3rd Ave",
+			"subDivision": "4",
+			"city": "San Mateo",
+			"postalCode": "94401",
+			"workEmail": "anesh.wyra@netsuite.com"
+		},
+		{
+			"referenceableAlias": "person.cameron_price",
+			"firstName": "Cameron",
+			"lastName": "Price",
+			"externalId": "cameron_price",
+			"title": "Operations",
+			"personalEmail": "cameron.price.wyra@netsuite.com",
+			"homePhoneNumber": "+1 (650) 200-8539",
+			"gender": "MALE",
+			"addressLine1": "222 Catalina Blvd",
+			"subDivision": "4",
+			"city": "San Rafael",
+			"postalCode": "94901",
+			"workEmail": "cameron.price.wyra@netsuite.com"
+		},
+		{
+			"referenceableAlias": "person.steve_tran",
+			"firstName": "Steve",
+			"lastName": "Tran",
+			"externalId": "steve_tran",
+			"title": "Installer/Tech",
+			"personalEmail": "steve.tran.wyra@netsuite.com",
+			"homePhoneNumber": "+1 (650) 555-0366",
+			"gender": "MALE",
+			"addressLine1": "91 Crystal Springs Rd",
+			"subDivision": "4",
+			"city": "Hillsborough",
+			"postalCode": "94010",
+			"workEmail": "steve.tran.wyra@netsuite.com"
+		},
+		{
+			"referenceableAlias": "person.felix_garcia",
+			"firstName": "Felix",
+			"lastName": "Garcia",
+			"externalId": "felix_garcia",
+			"title": "Installer/Tech",
+			"personalEmail": "felix.garcia.wyra@netsuite.com",
+			"homePhoneNumber": "+1 (650) 351-0232",
+			"gender": "MALE",
+			"addressLine1": "233 N Grant St",
+			"subDivision": "4",
+			"city": "San Mateo",
+			"postalCode": "94401",
+			"workEmail": "felix.garcia.wyra@netsuite.com"
+		},
+		{
+			"referenceableAlias": "person.amita_patel",
+			"firstName": "Amita",
+			"lastName": "Patel",
+			"externalId": "amita_patel",
+			"title": "Sales/Marketing",
+			"personalEmail": "amita.patel.wyra@netsuite.com",
+			"homePhoneNumber": "+1 (650) 344-8890",
+			"gender": "FEMALE",
+			"addressLine1": "1450 Franklin St",
+			"subDivision": "4",
+			"city": "San Francisco",
+			"postalCode": "94109",
+			"workEmail": "amita.patel.wyra@netsuite.com"
+		},
+		{
+			"referenceableAlias": "person.alex_tucker",
+			"firstName": "Alex",
+			"lastName": "Tucker",
+			"externalId": "alex_tucker",
+			"title": "Sales Support/Customer Service",
+			"personalEmail": "alex.tucker.wyra@netsuite.com",
+			"homePhoneNumber": "+1 (609) 887-1136",
+			"gender": "MALE",
+			"addressLine1": "1300 22nd st",
+			"subDivision": "4",
+			"city": "San Francisco",
+			"postalCode": "94107",
+			"workEmail": "alex.tucker.wyra@netsuite.com"
+		},
+		{
+			"referenceableAlias": "person.shonda_davis",
+			"firstName": "Shonda",
+			"lastName": "Davis",
+			"externalId": "shonda_davis",
+			"title": "Marketing",
+			"personalEmail": "shonda.davis.wyra@netsuite.com",
+			"homePhoneNumber": "+1 (843) 521-1234",
+			"gender": "MALE",
+			"addressLine1": "1450 Post St",
+			"subDivision": "4",
+			"city": "San Francisco",
+			"postalCode": "94107",
+			"workEmail": "shonda.davis.wyra@netsuite.com"
+		},
+		{
+			"referenceableAlias": "person.jenny_lynn",
+			"firstName": "Jenny",
+			"lastName": "Lynn",
+			"externalId": "jenny_lynn",
+			"title": "Partner Developer",
+			"personalEmail": "jenny.lynn.wyra@netsuite.com",
+			"homePhoneNumber": "+1 (433) 670-6449",
+			"gender": "FEMALE",
+			"addressLine1": "1450 Green St",
+			"subDivision": "4",
+			"city": "San Francisco",
+			"postalCode": "94107",
+			"workEmail": "jenny.lynn.wyra@netsuite.com"
+		}
+	],
+	"roles": [
+		{
+			"referenceableAlias": "role.finley",
+			"name": "Finley Role",
+			"accessProfiles": ["sap_account_administrator"]
+		},
+		{
+			"referenceableAlias": "role.parker",
+			"name": "Parker Role",
+			"accessProfiles": ["sap_full_business_access"]
+		},
+		{
+			"referenceableAlias": "role.beth",
+			"name": "Beth Role",
+			"accessProfiles": ["sap_accountant"]
+		},
+		{
+			"referenceableAlias": "role.anesh",
+			"name": "Anesh Role",
+			"accessProfiles": ["sap_accountant"]
+		},
+		{
+			"referenceableAlias": "role.cameron",
+			"name": "Cameron Role",
+			"accessProfiles": ["sap_operations"]
+		},
+		{
+			"referenceableAlias": "role.amita",
+			"name": "Amita Role",
+			"accessProfiles": ["sap_sales_rep"]
+		},
+		{
+			"referenceableAlias": "role.alex",
+			"name": "Alex Role",
+			"accessProfiles": ["sap_sales_rep"]
+		}
+	],
+	"users": [
+		{
+			"referenceableAlias": "user.finley",
+			"email": "finley.laurant.wyra@netsuite.com",
+			"personId": "{person.finely_laurant}",
+			"roleId": "{role.finley}",
+			"realmId": "1"
+		},
+		{
+			"referenceableAlias": "user.parker",
+			"email": "parker.james.wyra@netsuite.com",
+			"personId": "{person.parker_james}",
+			"roleId": "{role.parker}",
+			"realmId": "1"
+		},
+		{
+			"referenceableAlias": "user.beth",
+			"email": "beth.hernandez.wyra@netsuite.com",
+			"personId": "{person.beth_hernandez}",
+			"roleId": "{role.beth}",
+			"realmId": "1"
+		},
+		{
+			"referenceableAlias": "user.anesh",
+			"email": "anesh.wyra@netsuite.com",
+			"personId": "{person.anesh_kapoor}",
+			"roleId": "{role.anesh}",
+			"realmId": "1"
+		},
+		{
+			"referenceableAlias": "user.cameron",
+			"email": "cameron.price.wyra@netsuite.com",
+			"personId": "{person.cameron_price}",
+			"roleId": "{role.cameron}",
+			"realmId": "1"
+		},
+		{
+			"referenceableAlias": "user.amita",
+			"email": "amita.patel.wyra@netsuite.com",
+			"personId": "{person.amita_patel}",
+			"roleId": "{role.amita}",
+			"realmId": "1"
+		},
+		{
+			"referenceableAlias": "user.alex",
+			"email": "alex.tucker.wyra@netsuite.com",
+			"personId": "{person.alex_tucker}",
+			"roleId": "{role.alex}",
+			"realmId": "1"
+		}
+	],
+	"productItems": [
+		{
+			"referenceableAlias": "productItem.Bike Tablet",
+			"name": "Bike Tablet",
+			"cogsAccount": "{account.Cost of sales}",
+			"assetAccount": "{account.Inventory}",
+			"incomeAccount": "{account.Sales}",
+			"customerReturnVarianceAccount": "{account.Miscellaneous expense}"
+		},
+		{
+			"referenceableAlias": "productItem.Tablet Mounts",
+			"name": "Tablet Mounts",
+			"cogsAccount": "{account.Cost of sales}",
+			"assetAccount": "{account.Inventory}",
+			"incomeAccount": "{account.Sales}",
+			"customerReturnVarianceAccount": "{account.Miscellaneous expense}"
+		},
+		{
+			"referenceableAlias": "productItem.Sensors",
+			"name": "Sensors",
+			"cogsAccount": "{account.Cost of sales}",
+			"assetAccount": "{account.Inventory}",
+			"incomeAccount": "{account.Sales}",
+			"customerReturnVarianceAccount": "{account.Miscellaneous expense}"
+		},
+		{
+			"referenceableAlias": "productItem.USB Charger",
+			"name": "USB Charger",
+			"cogsAccount": "{account.Cost of sales}",
+			"assetAccount": "{account.Inventory}",
+			"incomeAccount": "{account.Sales}",
+			"customerReturnVarianceAccount": "{account.Miscellaneous expense}"
+		},
+		{
+			"referenceableAlias": "productItem.Power Generator",
+			"name": "Power Generator",
+			"cogsAccount": "{account.Cost of sales}",
+			"assetAccount": "{account.Inventory}",
+			"incomeAccount": "{account.Sales}",
+			"customerReturnVarianceAccount": "{account.Miscellaneous expense}"
+		},
+		{
+			"referenceableAlias": "productItem.Stationary Bike",
+			"name": "Stationary Bike",
+			"cogsAccount": "{account.Cost of sales}",
+			"assetAccount": "{account.Inventory}",
+			"incomeAccount": "{account.Sales}",
+			"customerReturnVarianceAccount": "{account.Miscellaneous expense}"
+		},
+		{
+			"referenceableAlias": "productItem.Smart Bike with Touch Screen Tablet",
+			"name": "Smart Bike with Touch Screen Tablet",
+			"cogsAccount": "{account.Cost of sales}",
+			"assetAccount": "{account.Inventory}",
+			"incomeAccount": "{account.Sales}",
+			"customerReturnVarianceAccount": "{account.Miscellaneous expense}"
+		}
+	],
+	"salePriceRules": [
+		{
+			"referenceableAlias": "Base Sale Rule for USD",
+			"basePriceRule": "1",
+			"lines": [
+				{
+					"item": "{serviceItem.Installation}",
+					"rate": "80.00"
+				},
+				{
+					"item": "{serviceItem.Product Training}",
+					"rate": "40.00"
+				},
+				{
+					"item": "{productItem.Bike Tablet}",
+					"rate": "399.00"
+				},
+				{
+					"item": "{productItem.Tablet Mounts}",
+					"rate": "30.00"
+				},
+				{
+					"item": "{productItem.Sensors}",
+					"rate": "40.00"
+				},
+				{
+					"item": "{productItem.USB Charger}",
+					"rate": "14.00"
+				},
+				{
+					"item": "{productItem.Power Generator}",
+					"rate": "250.00"
+				},
+				{
+					"item": "{productItem.Stationary Bike}",
+					"rate": "499.99"
+				},
+				{
+					"item": "{productItem.Smart Bike with Touch Screen Tablet}",
+					"rate": "1999.00"
+				}
+			]
+		}
+	],
+	"purchasePriceRules": [
+		{
+			"referenceableAlias": "Base Purchase Rule for USD",
+			"basePriceRule": "2",
+			"lines": [
+				{
+					"item": "{productItem.Bike Tablet}",
+					"rate": "200.00"
+				},
+				{
+					"item": "{productItem.Tablet Mounts}",
+					"rate": "10.00"
+				},
+				{
+					"item": "{productItem.Sensors}",
+					"rate": "15.00"
+				},
+				{
+					"item": "{productItem.USB Charger}",
+					"rate": "4.00"
+				},
+				{
+					"item": "{productItem.Power Generator}",
+					"rate": "75.00"
+				},
+				{
+					"item": "{productItem.Stationary Bike}",
+					"rate": "250.00"
+				},
+				{
+					"item": "{productItem.Smart Bike with Touch Screen Tablet}",
+					"rate": "700.00"
+				}
+			]
+		}
+	],
+	"serviceItems": [
+		{
+			"referenceableAlias": "serviceItem.Installation",
+			"name": "Installation",
+			"incomeAccount": "{account.Service revenues}",
+			"expenseAccount": "{account.Miscellaneous expense}"
+		},
+		{
+			"referenceableAlias": "serviceItem.Product Training",
+			"name": "Product Training",
+			"incomeAccount": "{account.Service revenues}",
+			"expenseAccount": "{account.Miscellaneous expense}"
+		},
+		{
+			"referenceableAlias": "serviceItem.Rent",
+			"name": "Rent",
+			"incomeAccount": "{account.Service revenues}",
+			"expenseAccount": "{account.Miscellaneous expense}"
+		}
+	],
+	"standardTerms": [
+		{
+			"referenceableAlias": "standardTerm.Net 30",
+			"name": "Net 30",
+			"daysUntilNetDue": 30
+		},
+		{
+			"referenceableAlias": "standardTerm.1% 10 Net 30",
+			"name": "1% 10 Net 30",
+			"daysUntilExpiry": 10,
+			"discountPercentage": 1,
+			"daysUntilNetDue": 30
+		},
+		{
+			"referenceableAlias": "standardTerm.Due on receipt",
+			"name": "Due on receipt"
+		},
+		{
+			"referenceableAlias": "standardTerm.Due end of month within 20th",
+			"name": "Due end of month within 20th"
+		}
+	],
+	"vendorCategories": [
+		{
+			"referenceableAlias": "vendorCategory.1099 Contractor",
+			"name": "1099 Contractor"
+		},
+		{
+			"referenceableAlias": "vendorCategory.Consultant",
+			"name": "Consultant"
+		},
+		{
+			"referenceableAlias": "vendorCategory.Insurance",
+			"name": "Insurance"
+		},
+		{
+			"referenceableAlias": "vendorCategory.Supplies",
+			"name": "Supplies"
+		}
+	],
+	"vendors": [
+		{
+			"referenceableAlias": "vendor.Rexon",
+			"shortCompanyName": "Rexon",
+			"subtype": "COMPANY",
+			"externalId": "rexon",
+			"vendorCategory": "{vendorCategory.Supplies}",
+			"terms": "{standardTerm.Net 30}",
+			"subdivision": "36",
+			"city": "Norman",
+			"postalCode": "73069",
+			"addressLine1": "490 24th Ave"
+		},
+		{
+			"referenceableAlias": "vendor.Tonic",
+			"shortCompanyName": "Tonic",
+			"subtype": "COMPANY",
+			"externalId": "tonic",
+			"vendorCategory": "{vendorCategory.Supplies}",
+			"terms": "{standardTerm.Net 30}",
+			"subdivision": "13",
+			"city": "Mundelein",
+			"postalCode": "60060",
+			"addressLine1": "161 N Seymour Ave"
+		},
+		{
+			"referenceableAlias": "vendor.Garmin",
+			"shortCompanyName": "Garmin",
+			"subtype": "COMPANY",
+			"externalId": "garmin",
+			"terms": "{standardTerm.Net 30}",
+			"subdivision": "35",
+			"city": "Cincinnati",
+			"postalCode": "45215",
+			"addressLine1": "8981 Reading Road"
+		},
+		{
+			"referenceableAlias": "vendor.Core 4 Solutions",
+			"shortCompanyName": "Core 4 Solutions",
+			"subtype": "COMPANY",
+			"externalId": "core4Solution",
+			"vendorCategory": "{vendorCategory.Supplies}",
+			"terms": "{standardTerm.Net 30}",
+			"subdivision": "44",
+			"city": "San Antonio",
+			"postalCode": "78664",
+			"addressLine1": "4718 Broadway St"
+		},
+		{
+			"referenceableAlias": "vendor.Crown Equipment Corporation",
+			"shortCompanyName": "Crown Equipment Corporation",
+			"subtype": "COMPANY",
+			"externalId": "crownEquipmentCorporation",
+			"vendorCategory": "{vendorCategory.Supplies}",
+			"terms": "{standardTerm.Due end of month within 20th}",
+			"subdivision": "5",
+			"city": "Boulder",
+			"postalCode": "80305",
+			"addressLine1": "2440 Baseline Rd"
+		},
+		{
+			"referenceableAlias": "vendor.PG&E",
+			"shortCompanyName": "PG&E",
+			"subtype": "COMPANY",
+			"externalId": "pge",
+			"terms": "{standardTerm.Net 30}",
+			"subdivision": "4",
+			"city": "Cupertino",
+			"postalCode": "95014",
+			"addressLine1": "19459 Stevens Creek Blvd"
+		},
+		{
+			"referenceableAlias": "vendor.WeWork",
+			"shortCompanyName": "WeWork",
+			"subtype": "COMPANY",
+			"externalId": "weWork",
+			"terms": "{standardTerm.Net 30}",
+			"subdivision": "32",
+			"city": "New York",
+			"postalCode": "10022",
+			"addressLine1": "575 Lexington Avenue"
+		},
+		{
+			"referenceableAlias": "vendor.Cars Direct",
+			"shortCompanyName": "Cars Direct",
+			"subtype": "COMPANY",
+			"externalId": "carsDirect",
+			"terms": "{standardTerm.Net 30}",
+			"subdivision": "4",
+			"city": "El Segundo",
+			"postalCode": "90245",
+			"addressLine1": "909 N Sepulveda Blvd"
+		}
+	],
+	"taxJurisdictions":
+	[
+		{
+			"name": "United States - Oregon",
+			"state": "37",
+			"registerOnSubsidiary": "1",
+			"taxRegistrationStartDate": "2020-01-01",
+			"taxRegistrationNumber": "0123456789"
+		}
+	],
+	"inventoryAdjustments": [
+		{
+			"referenceableAlias": "inventoryAdjustment.Inventory Adjustment 1",
+			"memo": "Inventory Adjustment 1",
+			"date": "2022-02-20",
+			"currencyId": "1",
+			"accountId": "{account.Inventory adjustment}",
+			"itemLines": [
+				{
+					"item": "{productItem.Bike Tablet}",
+					"quantity": "100",
+					"location": "{location.US 1 Warehouse}",
+					"rate": "200.00"
+				},
+				{
+					"item": "{productItem.Tablet Mounts}",
+					"quantity": "100",
+					"location": "{location.US 1 Warehouse}",
+					"rate": "10.00"
+				},
+				{
+					"item": "{productItem.Sensors}",
+					"quantity": "100",
+					"location": "{location.US 1 Warehouse}",
+					"rate": "15.00"
+				},
+				{
+					"item": "{productItem.USB Charger}",
+					"quantity": "200",
+					"location": "{location.US 1 Warehouse}",
+					"rate": "4.00"
+				},
+				{
+					"item": "{productItem.Power Generator}",
+					"quantity": "30",
+					"location": "{location.US 1 Warehouse}",
+					"rate": "75.00"
+				},
+				{
+					"item": "{productItem.Stationary Bike}",
+					"quantity": "30",
+					"location": "{location.US 1 Warehouse}",
+					"rate": "250.00"
+				},
+				{
+					"item": "{productItem.Smart Bike with Touch Screen Tablet}",
+					"quantity": "10",
+					"location": "{location.US 1 Warehouse}",
+					"rate": "700.00"
+				}
+			]
+		}
+	],
+	"salesOrders": [
+		{
+			"referenceableAlias": "salesOrder.1",
+			"memo": "Sales order 1",
+			"customer": "{customer.Awesome Fit}",
+			"currencyId": "1",
+			"transactionDate": "2022-05-01",
+			"location": "{location.US 1 Warehouse}",
+			"itemLines": [
+				{
+					"item": "{productItem.Bike Tablet}",
+					"quantity": "5"
+				},
+				{
+					"item": "{productItem.Stationary Bike}",
+					"quantity": "5"
+				}
+			]
+		},
+		{
+			"referenceableAlias": "salesOrder.2",
+			"memo": "Sales order 2",
+			"customer": "{customer.Davidson Fitness}",
+			"currencyId": "1",
+			"transactionDate": "2022-04-01",
+			"location": "{location.US 1 Warehouse}",
+			"itemLines": [
+				{
+					"item": "{productItem.Tablet Mounts}",
+					"quantity": "10"
+				}
+			]
+		},
+		{
+			"referenceableAlias": "salesOrder.3",
+			"memo": "Sales order 3",
+			"customer": "{customer.Katya's Cycling}",
+			"currencyId": "1",
+			"transactionDate": "2022-03-01",
+			"location": "{location.US 1 Warehouse}",
+			"itemLines": [
+				{
+					"item": "{productItem.Sensors}",
+					"quantity": "10"
+				}
+			]
+		},
+		{
+			"referenceableAlias": "salesOrder.6",
+			"memo": "Sales order 6",
+			"customer": "{customer.Awesome Fit}",
+			"currencyId": "1",
+			"transactionDate": "2022-05-01",
+			"location": "{location.US 1 Warehouse}",
+			"itemLines": [
+				{
+					"item": "{productItem.Sensors}",
+					"quantity": "5"
+				}
+			]
+		},
+		{
+			"referenceableAlias": "salesOrder.8",
+			"memo": "Sales order 8",
+			"customer": "{customer.Awesome Fit}",
+			"currencyId": "1",
+			"transactionDate": "2022-05-01",
+			"location": "{location.US 1 Warehouse}",
+			"itemLines": [
+				{
+					"item": "{productItem.Tablet Mounts}",
+					"quantity": "10"
+				}
+			]
+		},
+		{
+			"referenceableAlias": "salesOrder.9",
+			"memo": "Sales order 9",
+			"customer": "{customer.Awesome Fit}",
+			"currencyId": "1",
+			"transactionDate": "2022-03-01",
+			"location": "{location.US 1 Warehouse}",
+			"itemLines": [
+				{
+					"item": "{productItem.Sensors}",
+					"quantity": "10"
+				}
+			]
+		},
+		{
+			"referenceableAlias": "salesOrder.10",
+			"memo": "Sales order 10",
+			"customer": "{customer.Katya's Cycling}",
+			"currencyId": "1",
+			"transactionDate": "2022-04-01",
+			"location": "{location.US 1 Warehouse}",
+			"itemLines": [
+				{
+					"item": "{productItem.Bike Tablet}",
+					"quantity": "5"
+				}
+			]
+		},
+		{
+			"referenceableAlias": "salesOrder.11",
+			"memo": "Sales order 11",
+			"customer": "{customer.Awesome Fit}",
+			"currencyId": "1",
+			"transactionDate": "2022-02-01",
+			"location": "{location.US 1 Warehouse}",
+			"itemLines": [
+				{
+					"item": "{productItem.Tablet Mounts}",
+					"quantity": "5"
+				}
+			]
+		}
+	],
+	"purchaseOrders": [
+		{
+			"referenceableAlias": "PO01",
+			"entryIdOverride": "PO01",
+			"vendor": "{vendor.Crown Equipment Corporation}",
+			"itemLines": [
+				{
+					"item": "{productItem.Sensors}",
+					"quantity": "100",
+					"rate": "15.00"
+				},
+				{
+					"item": "{productItem.USB Charger}",
+					"quantity": "200",
+					"rate": "4.00"
+				},
+				{
+					"item": "{productItem.Power Generator}",
+					"quantity": "2",
+					"rate": "75.00"
+				}
+			],
+			"transactionDate": "2022-03-27",
+			"dueDate": "2022-05-11",
+			"currencyId": "1"
+		},
+		{
+			"referenceableAlias": "PO02",
+			"entryIdOverride": "PO02",
+			"vendor": "{vendor.Core 4 Solutions}",
+			"itemLines": [
+				{
+					"item": "{productItem.Bike Tablet}",
+					"quantity": "100",
+					"rate": "200.00"
+				},
+				{
+					"item": "{productItem.Tablet Mounts}",
+					"quantity": "15",
+					"rate": "10.00"
+				}
+			],
+			"transactionDate": "2022-03-27",
+			"dueDate": "2022-05-11",
+			"currencyId": "1"
+		},
+		{
+			"referenceableAlias": "PO03",
+			"entryIdOverride": "PO03",
+			"vendor": "{vendor.Rexon}",
+			"itemLines": [
+				{
+					"item": "{productItem.Stationary Bike}",
+					"quantity": "20",
+					"rate": "250.00"
+				},
+				{
+					"item": "{productItem.Smart Bike with Touch Screen Tablet}",
+					"quantity": "1",
+					"rate": "700.00"
+				}
+			],
+			"transactionDate": "2022-03-27",
+			"dueDate": "2022-05-11",
+			"currencyId": "1"
+		},
+		{
+			"referenceableAlias": "PO04",
+			"entryIdOverride": "PO04",
+			"vendor": "{vendor.Rexon}",
+			"itemLines": [
+				{
+					"item": "{productItem.Stationary Bike}",
+					"quantity": "20",
+					"rate": "250.00"
+				},
+				{
+					"item": "{productItem.Smart Bike with Touch Screen Tablet}",
+					"quantity": "1",
+					"rate": "700.00"
+				}
+			],
+			"transactionDate": "2022-03-27",
+			"dueDate": "2022-05-03",
+			"currencyId": "1"
+		},
+		{
+			"referenceableAlias": "PO05",
+			"entryIdOverride": "PO05",
+			"vendor": "{vendor.Crown Equipment Corporation}",
+			"itemLines": [
+				{
+					"item": "{productItem.Sensors}",
+					"quantity": "100",
+					"rate": "15.00"
+				},
+				{
+					"item": "{productItem.USB Charger}",
+					"quantity": "200",
+					"rate": "4.00"
+				},
+				{
+					"item": "{productItem.Power Generator}",
+					"quantity": "2",
+					"rate": "75.00"
+				}
+			],
+			"transactionDate": "2022-03-27",
+			"dueDate": "2022-05-03",
+			"currencyId": "1"
+		},
+		{
+			"referenceableAlias": "PO06",
+			"entryIdOverride": "PO06",
+			"vendor": "{vendor.Core 4 Solutions}",
+			"itemLines": [
+				{
+					"item": "{productItem.Bike Tablet}",
+					"quantity": "100",
+					"rate": "200.00"
+				},
+				{
+					"item": "{productItem.Tablet Mounts}",
+					"quantity": "15",
+					"rate": "10.00"
+				}
+			],
+			"transactionDate": "2022-03-27",
+			"dueDate": "2022-05-03",
+			"currencyId": "1",
+			"approved": true
+		},
+		{
+			"referenceableAlias": "PO07",
+			"entryIdOverride": "PO07",
+			"vendor": "{vendor.Rexon}",
+			"itemLines": [
+				{
+					"item": "{productItem.Stationary Bike}",
+					"quantity": "20",
+					"rate": "250.00"
+				},
+				{
+					"item": "{productItem.Smart Bike with Touch Screen Tablet}",
+					"quantity": "1",
+					"rate": "700.00"
+				}
+			],
+			"transactionDate": "2022-03-27",
+			"dueDate": "2022-05-03",
+			"currencyId": "1",
+			"approved": true
+		},
+		{
+			"referenceableAlias": "PO08",
+			"entryIdOverride": "PO08",
+			"vendor": "{vendor.Crown Equipment Corporation}",
+			"itemLines": [
+				{
+					"item": "{productItem.Sensors}",
+					"quantity": "100",
+					"rate": "15.00"
+				},
+				{
+					"item": "{productItem.USB Charger}",
+					"quantity": "200",
+					"rate": "4.00"
+				},
+				{
+					"item": "{productItem.Power Generator}",
+					"quantity": "2",
+					"rate": "75.00"
+				}
+			],
+			"transactionDate": "2022-03-27",
+			"dueDate": "2022-05-03",
+			"currencyId": "1",
+			"approved": true
+		},
+		{
+			"referenceableAlias": "PO09",
+			"entryIdOverride": "PO09",
+			"vendor": "{vendor.Core 4 Solutions}",
+			"itemLines": [
+				{
+					"item": "{productItem.Bike Tablet}",
+					"quantity": "100",
+					"rate": "200.00"
+				},
+				{
+					"item": "{productItem.Tablet Mounts}",
+					"quantity": "15",
+					"rate": "10.00"
+				}
+			],
+			"transactionDate": "2022-03-27",
+			"dueDate": "2022-05-03",
+			"currencyId": "1",
+			"approved": true
+		},
+		{
+			"referenceableAlias": "PO10",
+			"entryIdOverride": "PO10",
+			"vendor": "{vendor.Rexon}",
+			"itemLines": [
+				{
+					"item": "{productItem.Stationary Bike}",
+					"quantity": "20",
+					"rate": "250.00"
+				},
+				{
+					"item": "{productItem.Smart Bike with Touch Screen Tablet}",
+					"quantity": "1",
+					"rate": "700.00"
+				}
+			],
+			"transactionDate": "2022-03-27",
+			"dueDate": "2022-05-03",
+			"currencyId": "1",
+			"approved": true
+		}
+	],
+	"itemFulfillments": [
+		{
+			"referenceableAlias": "itemFulfillment.ofSalesOrder6",
+			"location": "{location.US 1 Warehouse}",
+			"transformFromSalesOrder": "{salesOrder.6}"
+		},
+		{
+			"referenceableAlias": "itemFulfillment.ofSalesOrder8",
+			"location": "{location.US 1 Warehouse}",
+			"transformFromSalesOrder": "{salesOrder.8}",
+			"applyOnly": [
+				{
+					"item": "{productItem.Tablet Mounts}",
+					"quantity": "5"
+				}
+			]
+		},
+		{
+			"referenceableAlias": "itemFulfillment.ofSalesOrder9",
+			"location": "{location.US 1 Warehouse}",
+			"transformFromSalesOrder": "{salesOrder.9}"
+		},
+		{
+			"referenceableAlias": "itemFulfillment.ofSalesOrder10",
+			"location": "{location.US 1 Warehouse}",
+			"transformFromSalesOrder": "{salesOrder.10}"
+		},
+		{
+			"referenceableAlias": "itemFulfillment.ofSalesOrder11",
+			"location": "{location.US 1 Warehouse}",
+			"transformFromSalesOrder": "{salesOrder.11}"
+		}
+	],
+	"invoices": [
+		{
+			"referenceableAlias": "invoice.1",
+			"salesOrderToInvoice": "{salesOrder.9}",
+			"memo" : "invoice 1",
+			"date" : "2022-05-06"
+		},
+		{
+			"referenceableAlias": "invoice.2",
+			"salesOrderToInvoice": "{salesOrder.10}",
+			"memo" : "invoice 2",
+			"date" : "2022-06-30"
+		},
+		{
+			"referenceableAlias": "invoice.3",
+			"salesOrderToInvoice": "{salesOrder.11}",
+			"memo" : "invoice 3",
+			"date" : "2022-06-15"
+		},
+		{
+			"referenceableAlias" : "invoice.4",
+			"memo" : "invoice 4",
+			"itemLines" : [
+				{
+					"item" : "{productItem.Smart Bike with Touch Screen Tablet}",
+					"quantity" : "1"
+				}
+			],
+			"locationId": "{location.US 1 Warehouse}",
+			"customerId" : "{customer.Body by Bob}",
+			"date" : "2022-04-15",
+			"termId" : "{standardTerm.Net 30}",
+			"currencyId" : "1"
+		},
+		{
+			"referenceableAlias" : "invoice.4.1",
+			"memo" : "invoice 4.1",
+			"itemLines" : [
+				{
+					"item" : "{serviceItem.Installation}",
+					"quantity" : "10"
+				}
+			],
+			"customerId" : "{customer.Body by Bob}",
+			"date" : "2022-05-03",
+			"termId" : "{standardTerm.1% 10 Net 30}",
+			"currencyId" : "1"
+		},
+		{
+			"referenceableAlias" : "invoice.5",
+			"memo" : "invoice 5",
+			"itemLines" : [
+				{
+					"item" : "{productItem.Tablet Mounts}",
+					"quantity" : "15"
+				}
+			],
+			"locationId": "{location.US 1 Warehouse}",
+			"customerId" : "{customer.Katya's Cycling}",
+			"date" : "2022-10-03",
+			"termId" : "{standardTerm.Due on receipt}",
+			"currencyId" : "1"
+		},
+		{
+			"referenceableAlias" : "invoice.6",
+			"memo" : "invoice 6",
+			"itemLines": [
+				{
+					"item": "{serviceItem.Product Training}",
+					"quantity" : "15"
+				}
+			],
+			"customerId" : "{customer.Davidson Fitness}",
+			"date" : "2022-11-05",
+			"termId" : "{standardTerm.Net 30}",
+			"currencyId" : "1"
+		},
+		{
+			"referenceableAlias" : "invoice.7",
+			"memo" : "invoice 7",
+			"itemLines" : [
+				{
+					"item" : "{productItem.Sensors}",
+					"quantity" : "5"
+				}
+			],
+			"locationId": "{location.US 1 Warehouse}",
+			"customerId" : "{customer.Body by Bob}",
+			"date" : "2022-06-22",
+			"termId" : "{standardTerm.Net 30}",
+			"currencyId" : "1"
+		},
+		{
+			"referenceableAlias" : "invoice.8",
+			"memo" : "invoice 8",
+			"itemLines" : [
+				{
+					"item" : "{productItem.Tablet Mounts}",
+					"quantity" : "2"
+				}
+			],
+			"locationId": "{location.US 1 Warehouse}",
+			"customerId" : "{customer.Awesome Fit}",
+			"date" : "2022-04-06",
+			"termId" : "{standardTerm.Net 30}",
+			"currencyId" : "1"
+		},
+		{
+			"referenceableAlias" : "invoice.9",
+			"memo" : "invoice 9",
+			"itemLines" : [
+				{
+					"item" : "{productItem.Sensors}",
+					"quantity" : "8"
+				}
+			],
+			"locationId": "{location.US 1 Warehouse}",
+			"customerId" : "{customer.Davidson Fitness}",
+			"date" : "2022-03-17",
+			"termId" : "{standardTerm.Due on receipt}",
+			"currencyId" : "1"
+		},
+		{
+			"referenceableAlias" : "invoice.10",
+			"memo" : "invoice 10",
+			"itemLines" : [
+				{
+					"item" : "{productItem.Stationary Bike}",
+					"quantity" : "5"
+				}
+			],
+			"locationId": "{location.US 1 Warehouse}",
+			"customerId" : "{customer.Katya's Cycling}",
+			"date" : "2022-06-26",
+			"termId" : "{standardTerm.Net 30}",
+			"currencyId" : "1"
+		},
+		{
+			"referenceableAlias" : "invoice.11",
+			"memo" : "invoice 11",
+			"itemLines": [
+				{
+					"item": "{productItem.Bike Tablet}",
+					"quantity": "12"
+				}
+			],
+			"locationId": "{location.US 1 Warehouse}",
+			"customerId": "{customer.Mind Cycle}",
+			"date": "2022-03-16",
+			"termId": "{standardTerm.Net 30}",
+			"currencyId": "1"
+		},
+		{
+			"referenceableAlias" : "invoice.12",
+			"memo" : "invoice 12",
+			"itemLines": [
+				{
+					"item": "{serviceItem.Product Training}",
+					"quantity" : "12"
+				}
+			],
+			"customerId" : "{customer.Mind Cycle}",
+			"date" : "2022-03-17",
+			"termId" : "{standardTerm.Net 30}",
+			"currencyId" : "1"
+		}
+	],
+	"customerPayments": [
+		{
+			"referenceableAlias": "customerPayment.1",
+			"invoiceToPay": "{invoice.1}",
+			"memo": "Customer payment 1",
+			"date": "2022-03-05",
+			"paymentAmount": "400",
+			"paymentMethod": "{paymentMethod.Wire to USD Bank}",
+			"bankFee": "2",
+			"receivedAmount": "398",
+			"currencyId": "1"
+		},
+		{
+			"referenceableAlias":"customerPayment.2",
+			"invoiceToPay": "{invoice.2}",
+			"memo": "Customer payment 2",
+			"date": "2022-10-03",
+			"paymentAmount": "1995",
+			"paymentMethod": "{paymentMethod.Check}",
+			"currencyId": "1"
+		},
+		{
+			"referenceableAlias":"customerPayment.3",
+			"invoiceToPay": "{invoice.5}",
+			"memo": "Customer payment 3",
+			"date": "2022-10-03",
+			"paymentAmount": "250",
+			"paymentMethod": "{paymentMethod.Check}",
+			"currencyId": "1"
+		},
+		{
+			"referenceableAlias":"customerPayment.4",
+			"invoiceToPay": "{invoice.8}",
+			"memo": "Customer payment 4",
+			"date": "2022-06-22",
+			"paymentAmount": "20",
+			"paymentMethod": "{paymentMethod.Check}",
+			"currencyId": "1"
+		},
+		{
+			"referenceableAlias":"customerPayment.5",
+			"invoiceToPay": "{invoice.11}",
+			"memo": "Customer Payment 5",
+			"date": "2022-04-06",
+			"paymentAmount": "2000",
+			"paymentMethod": "{paymentMethod.Cash}",
+			"currencyId": "1"
+		}
+	],
+	"returnAuthorizations": [
+		{
+			"referenceableAlias": "returnAuthorization.1",
+			"salesOrderToReturn": "{salesOrder.9}",
+			"memo": "RA 1",
+			"itemLines": [
+				{
+					"item": "{productItem.Sensors}",
+					"quantity" : "5",
+					"rate": "40"
+				}
+			],
+			"customerId": "{customer.Awesome Fit}",
+			"date": "2022-05-07",
+			"currencyId": "1"
+		},
+		{
+			"referenceableAlias": "returnAuthorization.2",
+			"salesOrderToReturn": "{salesOrder.10}",
+			"memo": "RA 2",
+			"itemLines": [
+				{
+					"item": "{productItem.Bike Tablet}",
+					"quantity" : "2",
+					"rate": "399"
+				}
+			],
+			"customerId": "{customer.Katya's Cycling}",
+			"date": "2022-05-05",
+			"currencyId": "1"
+		},
+		{
+			"referenceableAlias": "returnAuthorization.3",
+			"salesOrderToReturn": "{salesOrder.11}",
+			"memo": "RA 3",
+			"itemLines": [
+				{
+					"item": "{productItem.Tablet Mounts}",
+					"quantity" : "5",
+					"rate": "30"
+				}
+			],
+			"customerId": "{customer.Awesome Fit}",
+			"date": "2022-05-07",
+			"currencyId": "1"
+		}
+	],
+	"itemReceipts": [
+		{
+			"referenceableAlias": "itemReceipt.1",
+			"returnToReceive": "{returnAuthorization.2}",
+			"memo": "IR 1",
+			"itemLines": [
+				{
+					"item": "{productItem.Bike Tablet}",
+					"quantity" : "2",
+					"rate": "399",
+					"location": "{location.US 1 Warehouse}"
+				}
+			],
+			"date": "2022-05-06",
+			"currencyId": "1"
+		},
+		{
+			"referenceableAlias": "itemReceipt.2",
+			"returnToReceive": "{returnAuthorization.3}",
+			"memo": "IR 2",
+			"itemLines": [
+				{
+					"item": "{productItem.Tablet Mounts}",
+					"quantity" : "5",
+					"rate": "30",
+					"location": "{location.US 1 Warehouse}"
+				}
+			],
+			"date": "2022-05-10",
+			"currencyId": "1"
+		},
+		{
+			"referenceableAlias": "itemReceipt.3",
+			"purchaseToReceive": "{PO06}",
+			"memo": "IR 3",
+			"itemLines": [
+				{
+					"item": "{productItem.Bike Tablet}",
+					"quantity": "50",
+					"rate": "200",
+					"location": "{location.US 1 Warehouse}"
+				},
+				{
+					"item": "{productItem.Tablet Mounts}",
+					"quantity": "15",
+					"rate": "10",
+					"location": "{location.US 1 Warehouse}"
+				}
+			],
+			"date": "2022-04-27",
+			"currencyId": "1"
+		},
+		{
+			"referenceableAlias": "itemReceipt.4",
+			"purchaseToReceive": "{PO07}",
+			"memo": "IR 4",
+			"itemLines": [
+				{
+					"item": "{productItem.Stationary Bike}",
+					"quantity": "20",
+					"rate": "250",
+					"location": "{location.US 1 Warehouse}"
+				},
+				{
+					"item": "{productItem.Smart Bike with Touch Screen Tablet}",
+					"quantity": "1",
+					"rate": "700",
+					"location": "{location.US 1 Warehouse}"
+				}
+			],
+			"date": "2022-04-27",
+			"currencyId": "1"
+		},
+		{
+			"referenceableAlias": "itemReceipt.5",
+			"purchaseToReceive": "{PO08}",
+			"memo": "IR 5",
+			"itemLines": [
+				{
+					"item": "{productItem.Sensors}",
+					"quantity": "100",
+					"rate": "15",
+					"location": "{location.US 1 Warehouse}"
+				},
+				{
+					"item": "{productItem.USB Charger}",
+					"quantity": "200",
+					"rate": "4",
+					"location": "{location.US 1 Warehouse}"
+				},
+				{
+					"item": "{productItem.Power Generator}",
+					"quantity": "2",
+					"rate": "75",
+					"location": "{location.US 1 Warehouse}"
+				}
+			],
+			"date": "2022-04-27",
+			"currencyId": "1"
+		},
+		{
+			"referenceableAlias": "itemReceipt.6",
+			"purchaseToReceive": "{PO09}",
+			"memo": "IR 6",
+			"itemLines": [
+				{
+					"item": "{productItem.Bike Tablet}",
+					"quantity": "100",
+					"rate": "200",
+					"location": "{location.US 1 Warehouse}"
+				},
+				{
+					"item": "{productItem.Tablet Mounts}",
+					"quantity": "15",
+					"rate": "10",
+					"location": "{location.US 1 Warehouse}"
+				}
+			],
+			"date": "2022-04-27",
+			"currencyId": "1"
+		},
+		{
+			"referenceableAlias": "itemReceipt.7",
+			"purchaseToReceive": "{PO10}",
+			"memo": "IR 7",
+			"itemLines": [
+				{
+					"item": "{productItem.Stationary Bike}",
+					"quantity": "20",
+					"rate": "250",
+					"location": "{location.US 1 Warehouse}"
+				},
+				{
+					"item": "{productItem.Smart Bike with Touch Screen Tablet}",
+					"quantity": "1",
+					"rate": "700",
+					"location": "{location.US 1 Warehouse}"
+				}
+			],
+			"date": "2022-04-27",
+			"currencyId": "1"
+		}
+	],
+	"creditMemos": [
+		{
+			"referenceableAlias": "creditMemo.1",
+			"returnToCredit": "{returnAuthorization.3}",
+			"memo": "CM 1",
+			"date": "2022-05-12"
+		}
+	],
+	"vendorBills": [
+		{
+			"referenceableAlias": "vendorBill.Bill of PO09",
+			"memo": "Bill of PO09",
+			"purchaseToBill": "{PO09}",
+			"date": "2022-04-27",
+			"currencyId": "1",
+			"accountId": "{account.Accounts payable}",
+			"itemLines": [
+				{
+					"item": "{productItem.Bike Tablet}",
+					"quantity" : "100",
+					"rate": "200.00",
+					"location": "{location.US 1 Warehouse}"
+				},
+				{
+					"item": "{productItem.Tablet Mounts}",
+					"quantity" : "150",
+					"rate": "10.00",
+					"location": "{location.US 1 Warehouse}"
+				}
+			]
+		},
+		{
+			"referenceableAlias": "vendorBill.Bill of PO10",
+			"memo": "Bill of PO10",
+			"purchaseToBill": "{PO10}",
+			"date": "2022-04-27",
+			"currencyId": "1",
+			"accountId": "{account.Accounts payable}",
+			"itemLines": [
+				{
+					"item": "{productItem.Stationary Bike}",
+					"quantity" : "20",
+					"rate": "250.00",
+					"location": "{location.US 1 Warehouse}"
+				},
+				{
+					"item": "{productItem.Smart Bike with Touch Screen Tablet}",
+					"quantity" : "10",
+					"rate": "700.00",
+					"location": "{location.US 1 Warehouse}"
+				}
+			]
+		}
+	],
+	"vendorPayments": [
+		{
+			"referenceableAlias": "vendorPayment.Payment of PO10",
+			"memo": "Payment of PO10",
+			"billToPay": "{vendorBill.Bill of PO10}",
+			"date": "2022-04-27",
+			"currencyId": "1",
+			"paymentAccountId": "{account.USD Bank Account}"
+		}
+	],
+	"vendorCredits": [
+		{
+			"referenceableAlias": "vendorCredit.Vendor Credit 1",
+			"memo": "Vendor Credit 1",
+			"vendorId": "{vendor.Crown Equipment Corporation}",
+			"date": "2022-04-27",
+			"currencyId": "1",
+			"accountId": "{account.Accounts payable}",
+			"itemLines": [
+				{
+					"item": "{productItem.Sensors}",
+					"quantity" : "2",
+					"location": "{location.US 1 Warehouse}"
+				}
+			]
+		}
+	],
+	"journalEntries": [
+		{
+			"referenceableAlias": "journalEntry.Rent expense for June 2022",
+			"memo": "Rent expense for June 2022",
+			"date": "2022-06-30",
+			"currencyId": "1",
+			"lines": [
+				{
+					"accountId": "{account.Accounts payable}",
+					"credit": "1850"
+				},
+				{
+					"accountId": "{account.Rent expense}",
+					"debit": "1850"
+				}
+			]
+		},
+		{
+			"referenceableAlias": "journalEntry.Salary expense for June 2022",
+			"memo": "Salary expense for June 2022",
+			"date": "2022-06-30",
+			"currencyId": "1",
+			"lines": [
+				{
+					"accountId": "{account.Accounts payable}",
+					"credit": "8000"
+				},
+				{
+					"accountId": "{account.Salaries expense}",
+					"debit": "8000"
+				}
+			]
+		},
+		{
+			"referenceableAlias": "journalEntry.Utility expense for June 2022",
+			"memo": "Utility expense for June 2022",
+			"date": "2022-06-30",
+			"currencyId": "1",
+			"lines": [
+				{
+					"accountId": "{account.Accounts payable}",
+					"credit": "500"
+				},
+				{
+					"accountId": "{account.Utilities expense}",
+					"debit": "500"
+				}
+			]
+		}
+	],
+	"nsxJob": [
+		{
+			"referenceableAlias": "nsxJob.ceo",
+			"jobTitle": "CEO"
+		},
+		{
+			"referenceableAlias": "nsxJob.chief_financial_officer",
+			"jobTitle": "Chief Financial Officer"
+		},
+		{
+			"referenceableAlias": "nsxJob.chief_operating_officer",
+			"jobTitle": "Chief Operating Officer"
+		},
+		{
+			"referenceableAlias": "nsxJob.sales_representative",
+			"jobTitle": "Sales Representative"
+		},
+		{
+			"referenceableAlias": "nsxJob.marketing_analyst",
+			"jobTitle": "Marketing Analyst"
+		},
+		{
+			"referenceableAlias": "nsxJob.bookkeeper",
+			"jobTitle": "Bookkeeper"
+		},
+		{
+			"referenceableAlias": "nsxJob.accountant",
+			"jobTitle": "Accountant"
+		},
+		{
+			"referenceableAlias": "nsxJob.installer_tech",
+			"jobTitle": "Installer / Tech"
+		},
+		{
+			"referenceableAlias": "nsxJob.sales_support_customer_service",
+			"jobTitle": "Sales Support / Customer Service"
+		},
+		{
+			"referenceableAlias": "nsxJob.partner_developer",
+			"jobTitle": "Partner Developer"
+		}
+	]
+}
